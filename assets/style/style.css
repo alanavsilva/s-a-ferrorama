@@ -1,3 +1,10 @@
+#login-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .container1 {
     background-color: rgba(131, 111, 111);
     color: rgba(84, 57, 57);
@@ -28,4 +35,9 @@ margin-bottom: 15px;
     border: none;
     background-color:rgba(84, 57, 57); 
     color: azure;
+}
+
+.toggle a {
+    color:rgba(84, 57, 57);
+    font-size: 13px;
 }
