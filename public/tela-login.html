@@ -2,40 +2,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    </head>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../assets/style/style.css">
+   
+</head>
+<body id="login-cadastro">
+   
+    <header>
+        <div class="logo">
+        <img src="../assets/img/Captura de tela 2026-05-07 074754.png" alt="">
+       </div>
+    </header>
 
-<body id= "login-cadastro">
+    <main>
 
-   <main>
-<div class="container2">
-    <h2 id="titulo">Login</h2>
+<div class="container1">
+    <h2 id="titulo"> Olá cliente!!!</h2>
+    <h3>Antes de nossa viagem, faça seu cadastro: </h3>
     <form id="form-login">
         <div id="c-email" class="conjunto">
-            <label for="email">Login: </label>
+            <label for="email">email: </label>
             <input type="email" id="email" required>
         </div>   
         <div id="c-senha" class="conjunto"> 
             <label for="senha">Senha: </label>
-            <input type="password" id="senha" required>
+            <input type="password" id="senha"  required>
         </div>
-      <button type="button" class="btn btn-outline-dark">Entrar</button>
+        <button id="botao-envio" type="submit">Entrar</button>
     </form>
     <div id="mensagem"></div>
     <div class="toggle" id="toggle">
-        <a href="tela-cadastro-user.html">Cadastro para Administradores</a>
-      
+        <h3> Sou administrador </h3>
+         <a href="tela-login.html">login aqui</a>
     </div>
 </div>
 
+        
+    </main>
 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <footer>
+
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
 
 
 
-   </main> 
 
+    </main>
 
 </body>
 </html>
