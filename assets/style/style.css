@@ -1,10 +1,16 @@
+
 .logo {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+background-color:rgba(131, 111, 111);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.logo-site {
+    top: 0;
+    display: flex;
+    width: 100%;
+}
 
 
 #login-cadastro {
@@ -22,9 +28,11 @@
     padding: 30px;
     border-radius: 15px;
     margin: 0%;
+    position: fixed;
+    top: 25%;
 }
 
-.body{
+.main{
     display: flex;
     align-items: center;
 }
