@@ -8,9 +8,8 @@ Separação em:
 - Pasta de validações ("script")
 E sem pastas temos o README, a primeira página a rodar(index) e a LICENSE.
 
-
 ## Padrão de nomenclatura 
-Neste projeto esté sendo usado o padrão de letras minúsculas e separação por traço (-)
+Neste projeto está sendo utilizado o padrão kebab-case (de letras minúsculas) e separação de palavras por traço (-).
 
 
 ## Divisão inicial de responsabilidades entre os integrantes
