@@ -13,30 +13,28 @@
     
     <header id="logo-site">
         <div class="logo">
-        <img src="../assets/img/Captura de tela 2026-05-07 074754.png" alt="">
+        <img src="../assets/img/Captura de tela 2026-05-07 074754.png" alt="" class="img-fluid">
        </div>
     </header>
 
-    <main id="login-cadastro">
-
-<div class="container1">
-    <h2 id="titulo"> Olá adiministrador!!!</h2>
-    <h3>Antes de nossa viagem, faça seu cadastro: </h3>
+    <main id="login-cadastro" class="container">
+    <div class="container1">
+    <h2 id="titulo" class="display-6 fw-bold text-primary text-center"> Olá adiministrador!!!</h2>
+    <h3 class="h5 text-muted text-center">Antes de nossa viagem, faça seu cadastro: </h3>
     <form id="form-login">
-        <div id="c-email" class="conjunto">
-            <label for="email">email: </label>
-            <input type="email" id="email" required>
+        <div id="c-email" class="conjunto mb-3">
+            <label for="email" class="form-label fw-semibold">
+             <i class="bi bi-envelope-fill me-2"></i>Email:
+             </label>  
+            <input type="email" id="email" class="form-control form-control-lg" placeholder="Digite seu email" required>
         </div>   
         <div id="c-senha" class="conjunto"> 
             <label for="senha">Senha: </label>
             <input type="password" id="senha"  required>
         </div>
-        <button id="botao-envio" type="submit">Entrar</button>
+        <button type="botao-envio" class="btn">Entrar</button>
     </form>
-    <div id="mensagem"></div>
-    
-         <a href="tela-cadastro-user.html" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">clique aqui</a></p>
-    </div>
+
 </div>
 
         
