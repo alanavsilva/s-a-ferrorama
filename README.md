@@ -7,6 +7,13 @@ A proposta do sistema é unir tecnologia, organização e automação para propo
 ## OBJETIVOS DO PROJETO
 - Fazer com que o sistema tenha um melhor gerenciamento
 - Registrar informações do sistema
+- Realizar o controle e monitoramento da quantidade de passageiros
+- Permitir o acompanhamento de veocidade 
+- gerara alertas automáticos em situações de risco 
+- Disponibilizar gráficos de energia e velocidade
+- Registrar falhas para que sejam resolvidas o mais rápido possivel
+- Facilitar o acesso dos funcionários ás informações importantes da operação
+
 
 
 ## Identificação de membros
@@ -28,4 +35,5 @@ Mostrar gráfico de velocidade ao longo do tempo.
 Mostrar gráfico de consumo de energia.
 Mostrar histórico de localização.
 Listar todas as falhas detectadas.
+Armazenamento do histórico de monitoramento para futuras análises
 
