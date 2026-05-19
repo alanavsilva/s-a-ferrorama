@@ -63,6 +63,7 @@ margin-bottom: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
 }
 
 .navbar{
@@ -93,4 +94,10 @@ margin-bottom: 15px;
 .btn-outline-success:hover{
     background-color: #000000;
     color: black;
+}
+
+.cards-home {
+    display: flex;
+    justify-content: center;
+    
 }
