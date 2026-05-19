@@ -97,7 +97,31 @@ margin-bottom: 15px;
 }
 
 .cards-home {
-    display: flex;
-    justify-content: center;
-    
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 15px;
+     gap: 40px;
+     
+
+}
+
+    .card-text {
+       margin-top: 20px;
+
+    font-size: 22px;
+
+    color: #8a7474;
+
+    font-weight: bold;
+    }
+
+    .card img{
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
 }
