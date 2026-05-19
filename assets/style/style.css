@@ -58,3 +58,39 @@ margin-bottom: 15px;
     color:rgba(84, 57, 57);
     font-size: 13px;
 }
+
+#bemvindo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    background-color: rgba(131, 111, 111) !important;
+    padding: 15px;
+}
+
+.navbar-brand{
+    color:black !important; 
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-link{
+    color: rgb(0, 0, 0) !important;
+    margin-left: 15px;
+}
+
+.nav-link:hover{
+    color: #ffffff !important;
+}
+
+.btn-outline-success{
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline-success:hover{
+    background-color: #000000;
+    color: black;
+}
