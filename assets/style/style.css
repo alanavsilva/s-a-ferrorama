@@ -297,20 +297,42 @@ margin-bottom: 15px;
     border-radius: 8px;
 }
 
-h1{
-    
+
+    h1{
+    background-color: #7b1023;
+    color: rgb(240, 240, 240);
+    padding: 15px;
+    margin: 0;
+    width: 1050px;
 }
 
-th{
-
+    th{
+    padding: 15px;
+    text-align: left;
+    font-size: 20px;
 }
+   
 
 td{
+    padding: 15px;
+    font-size: 18px;
 
 }
 
 body{
-    
+    background-color: #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+thead{
+    background-color: #bd7373;
+}
+
+.table{
+      width: 1050px;
+    background-color: #c22929;
+
 }
 
 
