@@ -1,81 +1,154 @@
-const btnLoginFinal = document.getElementById("btnLoginFinal");
-if (btnLoginFinal) {
-    btnLoginFinal.onclick = (e) => {
-        e.preventDefault();
-        
-        setTimeout(() => {
-            window.location.href = "login.html";
-        }, 500);
-    };
-}
-
-document.getElementById("form-login").onsubmit = (e) => {
-    e.preventDefault();
-
-    let email = document.getElementById("email").value;
-    let senha = document.getElementById("senha").value;
-    let mensagem = document.getElementById("mensagem");
-    let titulo = document.getElementById("titulo");
-    let botao = document.getElementById("botao-envio");
-
-    mensagem.innerHTML = "";
-
-   
-    if (!email.includes("@") || !email.includes(".")) {
-        mensagem.innerHTML = '<div class="error"><p>Email Inválido!</p></div>';
-        return;
-    }
-
-    
-    if (senha.length < 4) {
-        mensagem.innerHTML = '<div class="error"><p>Senha muito curta!</p></div>';
-        return;
-    }
-
-    
-    let isCadastro = titulo.innerText.toLowerCase() === "cadastro";
-
-    if (isCadastro) {
-        
-        if (localStorage.getItem(email)) {
-            mensagem.innerHTML = '<div class="error"><p> apenas um adm pode cadastrar!</p></div>';
-            return;
-        }
-        
-        localStorage.setItem(email, senha);
-        mensagem.innerHTML = '<div class="sucesso"><p>apenas um adm pode cadastrar!</p></div>';
-        
-    
-    } else {
-       
-        let salva = localStorage.getItem(email);
-        if (salva === senha) {
-            mensagem.innerHTML = '<div class="sucesso"><p>Login com sucesso!</p></div>';
+const loginForm = document.getElementById('loginForm');
+            const emailInput = document.getElementById('email');
+            const senhaInput = document.getElementById('senha'); 
+            const mensagemDiv = document.getElementById('mensagem');
+            const botaoenvio = document.getElementById('botaoenvio');
+            const toggle = document.getElementById('toggle');
+            const titulo = document.getElementById('titulo');
             
-            setTimeout(() => {
-                window.location.href = "home.html";
-            }, 500);
-        } else {
-            mensagem.innerHTML = '<div class="error"><p>Email ou senha incorretos!</p></div>';
-        }
-    }
-
-    document.getElementById("form-login").reset();
-};
-
-
-const toggle = document.getElementById("toggle");
-const titulo = document.getElementById("titulo");
-const botao = document.getElementById("botao-envio");
-
-toggle.addEventListener("click", () => {
-    if (titulo.innerText === "Login") {
-        titulo.innerText = "Cadastro";
-        botao.innerText = "Cadastrar";
-        toggle.innerHTML = '<p>Já tem conta? <u> Faça login!</u></p>';
-    } else {
-        titulo.innerText = "Login";
-        botao.innerText = "Entrar";
-        toggle.innerHTML = '<p><u> Cadastro!</u></p>';
-    }
-});
+         
+            console.log('Form encontrado:', loginForm);
+            console.log('Email encontrado:', emailInput);
+            console.log('Senha encontrada:', senhaInput);
+            console.log('Toggle encontrado:', toggle);
+            
+           
+            function mostrarMensagem(tipo, texto) {
+                mensagemDiv.innerHTML = `<div class="${tipo}"><p>${texto}</p></div>`;
+                
+                
+                setTimeout(() => {
+                    mensagemDiv.innerHTML = '';
+                }, 3000);
+            }
+            
+            
+            function validarEmail(email) {
+                if (!email.includes('@')) {
+                    mostrarMensagem('erro', 'Email inválido! Falta o @');
+                    return false;
+                }
+                
+                if (!email.includes('.')) {
+                    mostrarMensagem('erro', 'Email inválido! Falta o ponto (.)');
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            
+            function validarSenha(senha) {
+                if (senha.length <= 4) {
+                    mostrarMensagem('erro', 'Senha muito curta! Precisa ter MAIS de 4 caracteres');
+                    return false;
+                }
+                return true;
+            }
+            
+           
+            let isCadastro = false;
+            
+            if (toggle) {
+                toggle.addEventListener('click', function() {
+                    isCadastro = !isCadastro;
+                    
+                    if (isCadastro) {
+                        titulo.innerText = 'Cadastro';
+                        botaoEnvio.innerText = 'Cadastrar';
+                        toggle.innerHTML = '<p>Já tem conta? <u>Faça login!</u></p>';
+                        console.log('Modo: CADASTRO');
+                    } else {
+                        titulo.innerText = 'Login';
+                        botaoEnvio.innerText = 'Entrar';
+                        toggle.innerHTML = '<p><u>Criar nova conta</u></p>';
+                        console.log('Modo: LOGIN');
+                    }
+                    
+                  
+                    emailInput.value = '';
+                    senhaInput.value = '';
+                    mensagemDiv.innerHTML = '';
+                });
+            }
+            
+            
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    console.log('Formulário enviado! Modo:', isCadastro ? 'CADASTRO' : 'LOGIN');
+                    
+                   
+                    mensagemDiv.innerHTML = '';
+                    
+                   
+                    const email = emailInput.value.trim();
+                    const senha = senhaInput.value;
+                    
+                    console.log('Email:', email);
+                    console.log('Senha:', senha);
+                    
+                   
+                    if (!validarEmail(email)) {
+                        emailInput.focus();
+                        return;
+                    }
+                    
+                   
+                    if (!validarSenha(senha)) {
+                        senhaInput.focus();
+                        return;
+                    }
+                    
+                   
+                    if (isCadastro) {
+                        
+                        if (localStorage.getItem(email)) {
+                            mostrarMensagem('erro', 'Este email já está cadastrado! Faça login.');
+                            return;
+                        }
+                        
+                       
+                        localStorage.setItem(email, senha);
+                        mostrarMensagem('sucesso', 'Cadastro realizado com sucesso! Faça login.');
+                        console.log('Usuário cadastrado:', email);
+                        
+                       
+                        setTimeout(() => {
+                            isCadastro = false;
+                            titulo.innerText = 'Login';
+                            botaoEnvio.innerText = 'Entrar';
+                            toggle.innerHTML = '<p><u>Criar nova conta</u></p>';
+                            emailInput.value = '';
+                            senhaInput.value = '';
+                        }, 2000);
+                    }
+                    
+                   
+                    else {
+                       
+                        const senhaSalva = localStorage.getItem(email);
+                        
+                        if (senhaSalva && senhaSalva === senha) {
+                            mostrarMensagem('sucesso', 'Login com sucesso! Redirecionando...');
+                            console.log('Login realizado com sucesso!');
+                            
+                          
+                            localStorage.setItem('usuarioLogado', email);
+                            
+                            
+                            setTimeout(() => {
+                                window.location.href = "home.html";
+                            }, 1000);
+                        } else {
+                            mostrarMensagem('erro', 'Email ou senha incorretos!');
+                            senhaInput.value = '';
+                            senhaInput.focus();
+                        }
+                    }
+                });
+            } else {
+                console.error('Formulário não encontrado!');
+            }
+       
+   
