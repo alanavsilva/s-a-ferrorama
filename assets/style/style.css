@@ -1,22 +1,175 @@
 
-.logo {
-background-color:rgba(131, 111, 111);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
 }
 
-.logo-site {
-    top: 0;
-    display: flex;
-    width: 100%;
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.pagina-login {
+  min-height: 100vh;
+}
+
+.login,
+.dashboard-view,
+.screen {
+  display: none;
+}
+
+.login-vizualização {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.painel-introducao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 64px;
+  color: var(--white);
+  background: linear-gradient(145deg, var(--black), var(--bordo));
+  width: 950px;
+  height: 950px
+}
+
+.painel-introducao h1 {
+  max-width: 650px;
+  margin: 0;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.introducao-login {
+  max-width: 520px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.inicio-login {
+  margin: 0 0 4px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.introducao_formulario {
+  color: var(--bordo);
 }
 
 
-#login-cadastro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+:root {
+  --bordo: #7b1023;
+  --bordo-dark: #460812;
+  --black: #090909;
+  --ink: #1d1d1f;
+  --muted: #6d6d73;
+  --line: #e7d9dc;
+  --white: #ffffff;
+  --paper: #f8f5f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.login-painel {
+  align-self: center;
+  justify-self: center;
+  width: 420px;
+  max-width: calc(100% - 40px);
+  padding: 34px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(9, 9, 9, 0.13);
+}
+
+.login-painel h2 {
+  margin: 0;
+  color: var(--black);
+}
+
+.login-painel label {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  color: var(--black);
+  font-weight: 700;
+}
+
+.login-painel input {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #d8c7cb;
+  border-radius: 6px;
+  outline: none;
+}
+
+.primary-button,
+.secondary-button,
+.quick-button,
+.logout-button,
+.nav-link {
+  border: 0;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.primary-button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px 18px;
+  color: var(--white);
+  background: var(--bordo);
+}
+
+.primary-button:hover,
+.quick-button:hover {
+  background: var(--bordo-dark);
+}
+
+.primary-button.small {
+  width: auto;
+  margin: 0;
+  padding: 11px 14px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.dashboard-view.active {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  color: var(--white);
+  background: var(--black);
 }
 
 
@@ -58,3 +211,110 @@ margin-bottom: 15px;
     color:rgba(84, 57, 57);
     font-size: 13px;
 }
+
+#bemvindo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.navbar{
+    background-color: rgba(131, 111, 111) ;
+    padding: 15px;
+}
+
+.navbar-brand{
+    color:black ; 
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-link{
+    color: rgb(0, 0, 0) ;
+    margin-left: 15px;
+}
+
+.nav-link:hover{
+    color: #000000 !important;
+    color: #ffffff ;
+}
+
+.btn-outline-success{
+    border-color: #000000;
+    color: #ffffff;
+}
+
+.btn-outline-success:hover{
+    background-color: #000000;
+    color: black;
+}
+
+.cards-home {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 15px;
+     gap: 40px;
+    }
+
+    .card-text {
+     margin-top: 20px;
+    font-size: 22px;
+    color: #8a7474;
+    font-weight: bold;
+    }
+
+    .card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+#login-cadastro {
+    align-self: center;
+    justify-self: center;
+    max-width: calc(100% - 40px);
+    padding: 34px;
+    border-radius: 8px;
+}
+
+
+    h1{
+    background-color: #7b1023;
+    color: rgb(240, 240, 240);
+    padding: 15px;
+    margin: 0;
+    width: 1050px;
+}
+
+    th{
+    padding: 15px;
+    text-align: left;
+    font-size: 20px;
+}
+   
+
+td{
+    padding: 15px;
+    font-size: 18px;
+
+}
+
+body{
+    background-color: #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+thead{
+    background-color: #bd7373;
+}
+
+.table{
+      width: 1050px;
+    background-color: #c22929;
+
+}
+
+
