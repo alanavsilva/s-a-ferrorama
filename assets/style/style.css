@@ -258,26 +258,31 @@ margin-bottom: 15px;
 
 
     th{
-    padding: 15px;
-    text-align: left;
-    font-size: 20px;
+    padding: 16px;
+    text-align: center;
+    font-size: 13px;
+    background-color: #d9d9d9;
+    color: black;
 }
   
 
 td{
-    padding: 15px;
-    font-size: 18px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: #650000;
+    font-weight: 800;
+    vertical-align: middle;
 
 }
 
 thead{
-    background-color: #bd7373;
+    background-color: #d9d9d9;
 }
 
 .table{
       width: 1050px;
-    background-color: #c22929;
-
+    background-color: white;
+    margin-left: 0;
 }
 
 
@@ -786,3 +791,28 @@ body{
   font-size:24px;
 }
 
+body {
+  background-color: #eeeeee;
+}
+
+h1{
+  color:black;
+  font-size: 32px;
+  font-weight: 800;
+  margin: 30px 0 30px;
+}
+
+.table{
+  margin-left: 30px;
+}
+
+.btn-lixeira{
+    width: 40px;
+    height: 40px;
+    background: #650000;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+
+}
