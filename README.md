@@ -24,7 +24,7 @@ A proposta do sistema é unir tecnologia, organização e automação para propo
 
 ### Nicole Beloni da Silva
 
-## FUNCIONALIDADES DO SISTEMNA
+## FUNCIONALIDADES DO SISTEMA
 
 Exibir velocidade atual do trem.
 Exibir localização em mapa.
