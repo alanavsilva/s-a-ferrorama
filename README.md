@@ -1,39 +1,92 @@
-# SISTEMA FERRORAMA- TREMTECH
+# SISTEMA FERRORAMA – TREMTECH
 
-## PROPOSTA DO SISTEMA
-Este projeto tem o intuito de fazer a organização e gerenciamento de uma estação de ferrrorama para facilitar a condução, para o admistrador ter acesso as localizações, velocidade, controle de passageiros, energia, histórico, manutenção, alertas, relatórios e entre diversas funcionalidades pensadas em contriibuir para o projeto.
-A proposta do sistema é unir tecnologia, organização e automação para proporcionar um funcionamento mais eficiente e interativo, permitindo um maior controle sobre a circulção dos trens, e atividades realizadas dentro da estação!
+#### Sobre o Projeto
 
-## OBJETIVOS DO PROJETO
-- Fazer com que o sistema tenha um melhor gerenciamento
-- Registrar informações do sistema
-- Realizar o controle e monitoramento da quantidade de passageiros
-- Permitir o acompanhamento de veocidade 
-- gerara alertas automáticos em situações de risco 
-- Disponibilizar gráficos de energia e velocidade
-- Registrar falhas para que sejam resolvidas o mais rápido possivel
-- Facilitar o acesso dos funcionários ás informações importantes da operação
+O **TREMTECH** é um sistema web desenvolvido para o gerenciamento e monitoramento de uma estação de Ferrorama.
 
+O sistema permite acompanhar informações dos trens, como velocidade, localização, consumo de energia, quantidade de passageiros, falhas e alertas.
 
+Os dados serão armazenados em um banco de dados, permitindo o registro e a consulta de informações e históricos da operação.
 
-## Identificação de membros
+#### Objetivos
 
-### Alana Veiga da Silva
+* Melhorar o gerenciamento da estação;
+* Registrar informações dos trens;
+* Monitorar a velocidade dos trens;
+* Exibir a localização dos trens;
+* Controlar a quantidade de passageiros;
+* Monitorar o consumo de energia;
+* Registrar falhas e problemas;
+* Exibir alertas;
+* Consultar históricos de monitoramento;
+* Facilitar o acesso dos funcionários às informações da operação.
 
-### Piettra Nicole Cidral
+#### Funcionalidades
 
-### Nicole Beloni da Silva
+* Exibir velocidade atual do trem;
+* Exibir localização do trem;
+* Exibir consumo de energia;
+* Exibir quantidade de passageiros;
+* Exibir alertas ativos;
+* Consultar histórico de velocidade;
+* Consultar histórico de localização;
+* Consultar histórico de consumo de energia;
+* Registrar e consultar falhas;
+* Registrar manutenções;
+* Visualizar gráficos de velocidade e energia;
+* Consultar registros históricos.
 
-## FUNCIONALIDADES DO SISTEMA
+#### Tecnologias Utilizadas
 
-Exibir velocidade atual do trem.
-Exibir localização em mapa.
-Exibir consumo de energia.
-Exibir alertas ativos.
-Dados detalhados
-Mostrar gráfico de velocidade ao longo do tempo.
-Mostrar gráfico de consumo de energia.
-Mostrar histórico de localização.
-Listar todas as falhas detectadas.
-Armazenamento do histórico de monitoramento para futuras análises
+**Front-end:**
+
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+
+**Back-end:**
+
+* PHP
+* MySQLi
+
+**Banco de Dados:**
+
+* MySQL
+
+#### Banco de Dados
+
+O banco de dados será utilizado para armazenar as informações do sistema.
+
+Principais dados:
+
+* Trens;
+* Localizações;
+* Velocidades;
+* Passageiros;
+* Consumo de energia;
+* Alertas;
+* Falhas;
+* Manutenções;
+* Usuários;
+* Registros de monitoramento.
+
+#### Funcionamento
+
+O sistema será dividido em três partes:
+
+**Front-end → Back-end → Banco de Dados**
+
+O **Front-end** será responsável pela interface e interação com o usuário.
+
+O **Back-end**, desenvolvido em PHP, será responsável pelo processamento das informações e pela comunicação com o banco de dados.
+
+O **MySQL** será responsável pelo armazenamento dos dados do sistema.
+
+#### Equipe
+
+* Alana Veiga da Silva
+* Piettra Nicole Cidral
+* Nicole Beloni da Silva
+
 
