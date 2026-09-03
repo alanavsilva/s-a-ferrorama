@@ -10,7 +10,11 @@ Os dados serão armazenados em um banco de dados, permitindo o registro e a cons
 
 ---
 
-### Objetivos
+## Objetivos do sistema
+
+O objetivo do Tremtech é desenvolver um sistema web simples, organizado e eficiente para auxiliar no gerenciamento da operações ferroviárias.
+
+O sistema busca:
 
 * Melhorar o gerenciamento da estação;
 * Registrar informações dos trens;
@@ -23,40 +27,52 @@ Os dados serão armazenados em um banco de dados, permitindo o registro e a cons
 * Consultar históricos de monitoramento;
 * Facilitar o acesso dos funcionários às informações da operação.
 
-#### Funcionalidades
+  ---
 
-* Exibir velocidade atual do trem;
-* Exibir localização do trem;
-* Exibir consumo de energia;
-* Exibir quantidade de passageiros;
-* Exibir alertas ativos;
-* Consultar histórico de velocidade;
-* Consultar histórico de localização;
-* Consultar histórico de consumo de energia;
-* Registrar e consultar falhas;
-* Registrar manutenções;
-* Visualizar gráficos de velocidade e energia;
-* Consultar registros históricos.
+## Requisitos funcionais
 
-#### Tecnologias Utilizadas
+RF1  Exibir velocidade atual do trem;
+<br>
+RF2  Exibir localização do trem;
+<br>
+RF3 Exibir consumo de energia;
+<br>
+RF4 Exibir quantidade de passageiros;
+<br>
+RF5 Exibir alertas ativos;
+<br>
+RF6 Consultar histórico de velocidade;
+<br>
+RF7 Consultar histórico de localização;
+<br>
+RF8 Consultar histórico de consumo de energia;
+<br>
+RF9 Registrar e consultar falhas;
+<br>
+RF10 Registrar manutenções;
+<br>
+RF11 Visualizar gráficos de velocidade e energia;
+<br>
+RF12 Consultar registros históricos.
 
-**Front-end:**
+---
 
-* HTML
-* CSS
-* JavaScript
-* Bootstrap
+## Tecnologias Utilizadas
 
-**Back-end:**
+**HTML** - estruturação das páginas 
+**CSS** - estilização e identidade visual
+**JavaScript** - validações e interações da interface
+**PHP** - desenvolvimento da lógica e integração com banco de dados
+**MySQL** - armazenamento e gerenciamento de dados
+**Apache** - servidor utilizado para a execução do projeto localmente
+**XAMPP** - ambiente utilizado para a execução do Apache e MySQL
+**Visual Studio Code - editor de código utilizado pela equipe
+**GitHub** - versionamento e armazenamento do código fonte
+**GitHub** - organização e acompanhamento das tarefas (Kanban)
 
-* PHP
-* MySQLi
+---
 
-**Banco de Dados:**
-
-* MySQL
-
-#### Banco de Dados
+## Banco de Dados
 
 O banco de dados será utilizado para armazenar as informações do sistema.
 
@@ -73,7 +89,7 @@ Principais dados:
 * Usuários;
 * Registros de monitoramento.
 
-#### Funcionamento
+## Funcionamento
 
 O sistema será dividido em três partes:
 
@@ -85,7 +101,6 @@ O **Back-end**, desenvolvido em PHP, será responsável pelo processamento das i
 
 O **MySQL** será responsável pelo armazenamento dos dados do sistema.
 
-#### Requisitos funcionais:
 
 
 
