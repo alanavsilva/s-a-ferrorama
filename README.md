@@ -83,10 +83,7 @@ O **Back-end**, desenvolvido em PHP, será responsável pelo processamento das i
 
 O **MySQL** será responsável pelo armazenamento dos dados do sistema.
 
-#### Equipe
+#### Requisitos funcionais:
 
-* Alana Veiga da Silva
-* Piettra Nicole Cidral
-* Nicole Beloni da Silva
 
 
