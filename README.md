@@ -1,6 +1,6 @@
 # SISTEMA FERRORAMA – TREMTECH
 
-#### Sobre o Projeto
+## Sobre o Projeto
 
 O **TREMTECH** é um sistema web desenvolvido para o gerenciamento e monitoramento de uma estação de Ferrorama.
 
@@ -8,7 +8,9 @@ O sistema permite acompanhar informações dos trens, como velocidade, localiza�
 
 Os dados serão armazenados em um banco de dados, permitindo o registro e a consulta de informações e históricos da operação.
 
-#### Objetivos
+---
+
+### Objetivos
 
 * Melhorar o gerenciamento da estação;
 * Registrar informações dos trens;
