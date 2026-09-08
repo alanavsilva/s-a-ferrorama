@@ -8,3 +8,14 @@ PDO (PHP Data Objects) serve como uma camada de abstração para conectar e mani
 
 ### Como funciona?
 É uma extensão do PHP que funciona como uma camada de abstraçõa para acesso a bancos de dados relacional.
+
+### Caracteristicas:
+- Flexibilidade – Como o PDO carrega o driver específico do banco de dados em tempo de execução, não é preciso reconfigurar o PHP sempre que um banco de dados diferente for usado.
+
+- Desempenho – O PDO está escrito em C e compilado no PHP, o que lhe garante um aumento considerável no desempenho em relação a soluções escritas em PHP.
+
+- Consistência de código – No PDO não existe a inconsistência de código, pois é oferecida apenas uma interface unificada que é está disponível para qualquer banco de dados.
+
+- Características de orientação de objetos – Possui recursos de orientação de objetos, o que resulta em uma comunicação mais poderosa e eficiente com banco de dados.
+
+### PDO vantagens:
