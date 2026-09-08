@@ -1,39 +1,123 @@
-# SISTEMA FERRORAMA- TREMTECH
+# SISTEMA FERRORAMA – TREMTECH
 
-## PROPOSTA DO SISTEMA
-Este projeto tem o intuito de fazer a organização e gerenciamento de uma estação de ferrrorama para facilitar a condução, para o admistrador ter acesso as localizações, velocidade, controle de passageiros, energia, histórico, manutenção, alertas, relatórios e entre diversas funcionalidades pensadas em contriibuir para o projeto.
-A proposta do sistema é unir tecnologia, organização e automação para proporcionar um funcionamento mais eficiente e interativo, permitindo um maior controle sobre a circulção dos trens, e atividades realizadas dentro da estação!
+## Sobre o Projeto
 
-## OBJETIVOS DO PROJETO
-- Fazer com que o sistema tenha um melhor gerenciamento
-- Registrar informações do sistema
-- Realizar o controle e monitoramento da quantidade de passageiros
-- Permitir o acompanhamento de veocidade 
-- gerara alertas automáticos em situações de risco 
-- Disponibilizar gráficos de energia e velocidade
-- Registrar falhas para que sejam resolvidas o mais rápido possivel
-- Facilitar o acesso dos funcionários ás informações importantes da operação
+O **TREMTECH** é um sistema web desenvolvido para o gerenciamento e monitoramento de uma estação de Ferrorama.
+
+O sistema permite acompanhar informações dos trens, como velocidade, localização, consumo de energia, quantidade de passageiros, falhas e alertas.
+
+Os dados serão armazenados em um banco de dados, permitindo o registro e a consulta de informações e históricos da operação.
+
+---
+
+## Objetivos do sistema
+
+O objetivo do Tremtech é desenvolver um sistema web simples, organizado e eficiente para auxiliar no gerenciamento da operações ferroviárias.
+
+O sistema busca:
+
+* Melhorar o gerenciamento da estação;
+* Registrar informações dos trens;
+* Monitorar a velocidade dos trens;
+* Exibir a localização dos trens;
+* Controlar a quantidade de passageiros;
+* Monitorar o consumo de energia;
+* Registrar falhas e problemas;
+* Exibir alertas;
+* Consultar históricos de monitoramento;
+* Facilitar o acesso dos funcionários às informações da operação.
+
+  ---
+
+## Requisitos funcionais
+
+RF1  Exibir velocidade atual do trem;
+<br>
+RF2  Exibir localização do trem;
+<br>
+RF3 Exibir consumo de energia;
+<br>
+RF4 Exibir quantidade de passageiros;
+<br>
+RF5 Exibir alertas ativos;
+<br>
+RF6 Consultar histórico de velocidade;
+<br>
+RF7 Consultar histórico de localização;
+<br>
+RF8 Consultar histórico de consumo de energia;
+<br>
+RF9 Registrar e consultar falhas;
+<br>
+RF10 Registrar manutenções;
+<br>
+RF11 Visualizar gráficos de velocidade e energia;
+<br>
+RF12 Consultar registros históricos.
+
+---
+
+## Tecnologias Utilizadas
+
+**HTML** - estruturação das páginas 
+**CSS** - estilização e identidade visual
+**JavaScript** - validações e interações da interface
+**PHP** - desenvolvimento da lógica e integração com banco de dados
+**MySQL** - armazenamento e gerenciamento de dados
+**Apache** - servidor utilizado para a execução do projeto localmente
+**XAMPP** - ambiente utilizado para a execução do Apache e MySQL
+**Visual Studio Code - editor de código utilizado pela equipe
+**GitHub** - versionamento e armazenamento do código fonte
+**GitHub** - organização e acompanhamento das tarefas (Kanban)
+
+---
+
+## Banco de Dados
+
+O banco de dados será utilizado para armazenar as informações do sistema.
+
+Principais dados:
+
+* Trens;
+* Localizações;
+* Velocidades;
+* Passageiros;
+* Consumo de energia;
+* Alertas;
+* Falhas;
+* Manutenções;
+* Usuários;
+* Registros de monitoramento.
+
+## Funcionamento
+
+O sistema será dividido em três partes:
+
+**Front-end → Back-end → Banco de Dados**
+
+O **Front-end** será responsável pela interface e interação com o usuário.
+
+O **Back-end**, desenvolvido em PHP, será responsável pelo processamento das informações e pela comunicação com o banco de dados.
+
+O **MySQL** será responsável pelo armazenamento dos dados do sistema.
+
+---
+
+## Outras Informações
+
+O **Sistema ferrrorama** está sendo desenvolvido de forma colaborativa utilizando **GitHub** para versionamento de código e **GitHub Projects** para o gerenciamento das atividades
+
+* **Qualidade de Código:** Ao longo do desenvolvimento, a equipe faz revisões no código, realiza testes das funcionalidades e mantém a estrutura do projeto organizada. Dessa forma, busca seguir os padrões estabelecidos e garantir que todas as partes do sistema funcionem de maneira integrada.
+
+**Desenvolvimento Incremental:** O sistema será construído de forma gradual, dividindo o desenvolvimento em diferentes etapas:
+
+1. Criação das interfaces do sistema (Front-end);
+2. Desenvolvimento e conexão do banco de dados;
+3. Programação das funcionalidades utilizando **PHP**;
+4. Realização de testes e validações para verificar o funcionamento do sistema;
+5. Integração das informações de monitoramento ao sistema.
 
 
 
-## Identificação de membros
 
-### Alana Veiga da Silva
-
-### Piettra Nicole Cidral
-
-### Nicole Beloni da Silva
-
-## FUNCIONALIDADES DO SISTEMA
-
-Exibir velocidade atual do trem.
-Exibir localização em mapa.
-Exibir consumo de energia.
-Exibir alertas ativos.
-Dados detalhados
-Mostrar gráfico de velocidade ao longo do tempo.
-Mostrar gráfico de consumo de energia.
-Mostrar histórico de localização.
-Listar todas as falhas detectadas.
-Armazenamento do histórico de monitoramento para futuras análises
 
