@@ -45,3 +45,17 @@ PDO (PHP Data Objects) serve como uma camada de abstração para conectar e mani
 - Não possui parâmetros nomeados;
 
 - Não possui prepared statements do lado cliente;
+
+### Prepared Statements;
+É uma instrução preparada (também conhecida como instrução parametrizada) éum recurso de banco de dados que pré-compila modelos de código SQL e os separa dos dados do usuárioServe como uma prática fundamental para a construção de aplicações web seguras e eficientes.
+
+### Quando utilizar PDO?
+O PDO (PHP Data Objects) deve ser utilizado em aplicações PHP quando você precisa de uma interface segura, orientada a objetos e flexível para conectar a aplicação a diferentes sistemas de banco de dados. Pode ser utilizado em troca de banco de dados, segurança contra injeção de sql, uso de orientação a objetos e controle de transações.
+
+### Fontes utilizadas: 
+https://www.php.net/manual/pt_BR/book.pdo.php
+https://www.treinaweb.com.br/blog/o-que-e-pdo-no-php
+https://www.devmedia.com.br/introducao-ao-php-data-objects-pdo/25318
+https://www.w3schools.com/sql/sql_prepared_statements.asp
+https://www.devmedia.com.br/php-pdo-como-se-conectar-ao-banco-de-dados/37211
+
