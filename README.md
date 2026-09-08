@@ -101,6 +101,23 @@ O **Back-end**, desenvolvido em PHP, será responsável pelo processamento das i
 
 O **MySQL** será responsável pelo armazenamento dos dados do sistema.
 
+---
+
+## Outras Informações
+
+O **Sistema ferrrorama** está sendo desenvolvido de forma colaborativa utilizando **GitHub** para versionamento de código e **GitHub Projects** para o gerenciamento das atividades
+
+* **Qualidade de Código:** Ao longo do desenvolvimento, a equipe faz revisões no código, realiza testes das funcionalidades e mantém a estrutura do projeto organizada. Dessa forma, busca seguir os padrões estabelecidos e garantir que todas as partes do sistema funcionem de maneira integrada.
+
+**Desenvolvimento Incremental:** O sistema será construído de forma gradual, dividindo o desenvolvimento em diferentes etapas:
+
+1. Criação das interfaces do sistema (Front-end);
+2. Desenvolvimento e conexão do banco de dados;
+3. Programação das funcionalidades utilizando **PHP**;
+4. Realização de testes e validações para verificar o funcionamento do sistema;
+5. Integração das informações de monitoramento ao sistema.
+
+
 
 
 
