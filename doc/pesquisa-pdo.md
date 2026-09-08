@@ -19,3 +19,29 @@ PDO (PHP Data Objects) serve como uma camada de abstração para conectar e mani
 - Características de orientação de objetos – Possui recursos de orientação de objetos, o que resulta em uma comunicação mais poderosa e eficiente com banco de dados.
 
 ### PDO vantagens:
+- Funciona com 12 drivers de bancos de dados diferentes (4D, MS SQL Server, Firebird/Interbase, MySQL, Oracle, ODBC/DB2, PostgreSQL, SQLite, Informix, IBM, CUBRID);
+
+- API Orientada a objetos;
+
+- Possui parâmetros nomeados;
+
+- Possui prepared statements do lado cliente
+
+### PDO desvantagens:
+- Não tão veloz quanto MySQLi;
+
+- Por padrão, ele simula prepared statements (você pode ativar a versão nativa ao configurar a conexão dele com o banco, mas caso a versão nativa não funcione por algum motivo, ele volta a simular os prepared statements sem disparar erros ou avisos)
+
+### MySQL vantagens:
+- API Orientada a objetos e procedural;
+
+- Performace elevada;
+
+- Sintaxe relativamente mais simples (e similar a antiga API mysql_*);
+
+### MySQL desvantagens:
+- Só funciona com bancos MySQL;
+
+- Não possui parâmetros nomeados;
+
+- Não possui prepared statements do lado cliente;
