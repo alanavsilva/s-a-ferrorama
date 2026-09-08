@@ -6,4 +6,5 @@ A extensão PHP Data Objects (PDO) define uma interface leve e consistente para 
 ### Para que serve?
 PDO (PHP Data Objects) serve como uma camada de abstração para conectar e manipular bancos de dados em aplicações escritas na linguagem PHP. Em vez de usar funções específicas para cada sistema (como MySQL, PostgreSQL ou SQLite), o programador usa uma interface única e padronizada.
 
-
+### Como funciona?
+É uma extensão do PHP que funciona como uma camada de abstraçõa para acesso a bancos de dados relacional.
