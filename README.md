@@ -32,54 +32,102 @@ O sistema busca:
 ## Requisitos funcionais
 
 RF01 – O sistema deve permitir que o usuário realize login .
+
 RF02 – O sistema deve validar as credenciais informadas pelo usuário com os dados cadastrados no banco de dados.
+
 RF03 – O sistema deve criar uma sessão para o usuário após a autenticação realizada com sucesso.
+
 RF04 – O sistema deve direcionar o usuário autenticado para a tela principal do sistema.
+
 RF05 – O sistema deve informar ao usuário quando as credenciais utilizadas no login forem inválidas.
+
 RF06 – O sistema deve permitir que o usuário encerre sua sessão por meio da opção "Logout".
+
 RF07 – O sistema deve permitir o cadastro de novos usuários.
-RF09 – O sistema deve apresentar uma lista dos usuários cadastrados
-RF10 – O sistema deve permitir pesquisar usuários cadastrados por nome de usuário ou e-mail.
-RF11 – O sistema deve permitir excluir usuários cadastrados.
-RF13 – O sistema deve apresentar uma tela principal após o login do usuário.
-RF14 – O sistema deve exibir o nome do usuário autenticado na tela principal.
-RF15 – O sistema deve apresentar o status atual da operação do trem.
-RF16 – O sistema deve apresentar informações gerais da ferrovia, 
-RF17 – O sistema deve disponibilizar um botão para acessar o cadastro de sensores e trens.
-RF18 – O sistema deve disponibilizar um botão para acessar o cadastro de usuários e rotas.
-RF19 – O sistema deve permitir o cadastro de sensores utilizados para o monitoramento ferroviário.
-RF21 – O sistema deve apresentar uma lista dos sensores cadastrados.
-RF23 – O sistema deve permitir pesquisar sensores cadastrados pelo nome do sensor.
-RF24 – O sistema deve permitir visualizar os detalhes de um sensor cadastrado.
-RF25 – O sistema deve permitir excluir sensores cadastrados.
-RF26 – O sistema deve solicitar a confirmação do usuário antes de excluir um sensor.
-RF27 – O sistema não deve permitir a exclusão de um sensor que possua dados registrados.
-RF28 – O sistema deve apresentar uma mensagem de erro, ao tentar excluir um sensor que possua dados registrados, 
-RF29 – O sistema deve permitir o cadastro de trens.
-RF32 – O sistema deve permitir visualizar os trens cadastrados no sistema.
-RF33 – O sistema deve apresentar uma tela de monitoramento em tempo real dos dados coletados pelos sensores.
-RF34 – O sistema deve apresentar a velocidade atual do trem com base nos dados recebidos pelos sensores.
-RF35 – O sistema deve apresentar a temperatura atual registrada pelos sensores.
-RF36 – O sistema deve apresentar a localização atual do trem em uma representação de mapa.
-RF37 – O sistema deve apresentar o status operacional do trem.
-RF38 – O sistema deve classificar o status operacional do trem como Normal, Alerta ou Falha.
-RF39 – O sistema deve atualizar automaticamente as informações de monitoramento conforme novas leituras dos sensores forem recebidas.
-RF40 – O sistema deve apresentar as falhas operacionais identificadas durante o monitoramento.
-RF41 – O sistema deve apresentar separadamente a quantidade de falhas resolvidas e não resolvidas.
-RF42 – O sistema deve permitir filtrar as falhas operacionais por status.
-RF43 – O sistema deve permitir marcar uma falha operacional como resolvida.
-RF44 – O sistema deve permitir reabrir uma falha que tenha sido marcada como resolvida.
-RF45 – O sistema deve permitir gerar relatórios sobre os dados da operação ferroviária.
-RF46 – O sistema deve permitir selecionar o sensor que será utilizado para gerar o relatório.
-RF47 – O sistema deve permitir selecionar o período ou mês utilizado para gerar o relatório.
-RF48 – O relatório deve apresentar a velocidade média registrada no período selecionado.
-RF49 – O relatório deve apresentar a temperatura média registrada no período selecionado.
-RF50 – O relatório deve apresentar a quantidade de falhas abertas e as respectivas falhas identificadas no período selecionado.
-RF51 – O sistema deve apresentar gráficos para auxiliar na análise dos dados da operação ferroviária.
-RF53 – O sistema deve permitir visualizar os relatórios gerados anteriormente.
-RF54 – O sistema deve permitir filtrar os relatórios por período e tipo de dado.
-RF55 – O sistema deve permitir cadastrar rotas.
-RF56 – O sistema deve permitir visualizar as rotas cadastradas e suas respectivas informações.
+
+RF08 – O sistema deve apresentar uma lista dos usuários cadastrados
+
+RF09 – O sistema deve permitir pesquisar usuários cadastrados por nome de usuário ou e-mail.
+
+RF10 – O sistema deve permitir excluir usuários cadastrados.
+
+RF11 – O sistema deve apresentar uma tela principal após o login do usuário.
+
+RF12 – O sistema deve exibir o nome do usuário autenticado na tela principal.
+
+RF13 – O sistema deve apresentar o status atual da operação do trem.
+
+RF14 – O sistema deve apresentar informações gerais da ferrovia.
+
+RF15 – O sistema deve disponibilizar um botão para acessar o cadastro de sensores e trens.
+
+RF16 – O sistema deve disponibilizar um botão para acessar o cadastro de usuários e rotas.
+
+RF17 – O sistema deve permitir o cadastro de sensores utilizados para o monitoramento ferroviário.
+
+RF18 – O sistema deve apresentar uma lista dos sensores cadastrados.
+
+RF19 – O sistema deve permitir pesquisar sensores cadastrados pelo nome do sensor.
+
+RF20 – O sistema deve permitir visualizar os detalhes de um sensor cadastrado.
+
+RF21 – O sistema deve permitir excluir sensores cadastrados.
+
+RF22 – O sistema deve solicitar a confirmação do usuário antes de excluir um sensor.
+
+RF23 – O sistema não deve permitir a exclusão de um sensor que possua dados registrados.
+
+RF24 – O sistema deve apresentar uma mensagem de erro, ao tentar excluir um sensor que possua dados registrados.
+
+RF25 – O sistema deve permitir o cadastro de trens.
+
+RF26 – O sistema deve permitir visualizar os trens cadastrados no sistema.
+
+RF27 – O sistema deve apresentar uma tela de monitoramento em tempo real dos dados coletados pelos sensores.
+
+RF28 – O sistema deve apresentar a velocidade atual do trem com base nos dados recebidos pelos sensores.
+
+RF29 – O sistema deve apresentar a temperatura atual registrada pelos sensores.
+
+RF30 – O sistema deve apresentar a localização atual do trem em uma representação de mapa.
+
+RF31 – O sistema deve apresentar o status operacional do trem.
+
+RF32 – O sistema deve classificar o status operacional do trem como Normal, Alerta ou Falha.
+
+RF33 – O sistema deve atualizar automaticamente as informações de monitoramento conforme novas leituras dos sensores forem recebidas.
+
+RF34 – O sistema deve apresentar as falhas operacionais identificadas durante o monitoramento.
+
+RF35 – O sistema deve apresentar separadamente a quantidade de falhas resolvidas e não resolvidas.
+
+RF36 – O sistema deve permitir filtrar as falhas operacionais por status.
+
+RF37 – O sistema deve permitir marcar uma falha operacional como resolvida.
+
+RF38 – O sistema deve permitir reabrir uma falha que tenha sido marcada como resolvida.
+
+RF39 – O sistema deve permitir gerar relatórios sobre os dados da operação ferroviária.
+
+RF40 – O sistema deve permitir selecionar o sensor que será utilizado para gerar o relatório.
+
+RF41 – O sistema deve permitir selecionar o período ou mês utilizado para gerar o relatório.
+
+RF42 – O relatório deve apresentar a velocidade média registrada no período selecionado.
+
+RF43 – O relatório deve apresentar a temperatura média registrada no período selecionado.
+
+RF44 – O relatório deve apresentar a quantidade de falhas abertas e as respectivas falhas identificadas no período selecionado.
+
+RF45 – O sistema deve apresentar gráficos para auxiliar na análise dos dados da operação ferroviária.
+
+RF46 – O sistema deve permitir visualizar os relatórios gerados anteriormente.
+
+RF47 – O sistema deve permitir filtrar os relatórios por período e tipo de dado.
+
+RF48 – O sistema deve permitir cadastrar rotas.
+
+RF49 – O sistema deve permitir visualizar as rotas cadastradas e suas respectivas informações.
 
 ---
 
