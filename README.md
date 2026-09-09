@@ -45,7 +45,7 @@ RF06 – O sistema deve permitir que o usuário encerre sua sessão por meio da 
 
 RF07 – O sistema deve permitir o cadastro de novos usuários.
 
-RF08 – O sistema deve apresentar uma lista dos usuários cadastrados
+RF08 – O sistema deve apresentar uma lista dos usuários cadastrados.
 
 RF09 – O sistema deve permitir pesquisar usuários cadastrados por nome de usuário ou e-mail.
 
@@ -67,7 +67,7 @@ RF17 – O sistema deve permitir o cadastro de sensores utilizados para o monito
 
 RF18 – O sistema deve apresentar uma lista dos sensores cadastrados.
 
-RF19 – O sistema deve permitir pesquisar sensores cadastrados pelo nome do sensor.
+RF19 – O sistema deve permitir pesquisar sensores cadastrados.
 
 RF20 – O sistema deve permitir visualizar os detalhes de um sensor cadastrado.
 
@@ -113,21 +113,15 @@ RF40 – O sistema deve permitir selecionar o sensor que será utilizado para ge
 
 RF41 – O sistema deve permitir selecionar o período ou mês utilizado para gerar o relatório.
 
-RF42 – O relatório deve apresentar a velocidade média registrada no período selecionado.
+RF42 – O sistema deve apresentar gráficos para auxiliar na análise dos dados da operação ferroviária.
 
-RF43 – O relatório deve apresentar a temperatura média registrada no período selecionado.
+RF43 – O sistema deve permitir visualizar os relatórios gerados anteriormente.
 
-RF44 – O relatório deve apresentar a quantidade de falhas abertas e as respectivas falhas identificadas no período selecionado.
+RF44 – O sistema deve permitir filtrar os relatórios por período e tipo de dado.
 
-RF45 – O sistema deve apresentar gráficos para auxiliar na análise dos dados da operação ferroviária.
+RF45 – O sistema deve permitir cadastrar rotas.
 
-RF46 – O sistema deve permitir visualizar os relatórios gerados anteriormente.
-
-RF47 – O sistema deve permitir filtrar os relatórios por período e tipo de dado.
-
-RF48 – O sistema deve permitir cadastrar rotas.
-
-RF49 – O sistema deve permitir visualizar as rotas cadastradas e suas respectivas informações.
+RF46 – O sistema deve permitir visualizar as rotas cadastradas e suas respectivas informações.
 
 ---
 
