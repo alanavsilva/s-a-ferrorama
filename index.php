@@ -30,6 +30,12 @@
                     <p class="introducao_formulario">Acesso interno</p>
                     <h2>Entrar no sistema</h2>
 
+
+                     <label for="nome">
+                        Nome
+                        <input type="text" id="nome" placeholder="Digite seu nome de usuário">
+                    </label>
+
                     <label for="email">Email:</label>
                     <input type="email" id="email" placeholder="Digite seu email" o>
                     <br>
@@ -43,9 +49,9 @@
                     <br>
                     <button id="botao-envio" type="submit">Entrar</button>
                     <div id="mensagem"></div>
-                </form>
-            </div>
-            <section>
+
+
+                    <button id="botao-sensores" type="button" onclick="window.location.href='..+
 
 
 
