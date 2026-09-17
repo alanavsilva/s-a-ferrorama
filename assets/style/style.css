@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-body {
+.body_geral {
   margin: 0;
   background: #eeeeee;
   font-family: Arial, sans-serif;
@@ -13,6 +13,7 @@ body {
 }
 
 .pagina {
+.pagina_sensor {
   display: flex;
   min-height: 100vh;
 }
@@ -212,4 +213,3 @@ td {
 .escondido {
   display: none;
 }
-
