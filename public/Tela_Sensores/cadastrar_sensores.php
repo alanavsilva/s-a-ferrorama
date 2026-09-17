@@ -79,6 +79,27 @@
         </div>
       </header>
 
+  <section id="visualizacao">
+        <button class="botao" onclick="abrirCadastro()">
+          CADASTRAR NOVO SENSOR
+        </button>
+
+        <div class="buscar">
+          <label for="pesquisa">Buscar</label>
+          <input id="pesquisa" type="text" placeholder="Nome do sensor">
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID do Sensor</th>
+              <th>Nome do sensor</th>
+              <th>Trem vinculado</th>
+              <th>Rota vinculada</th>
+              <th>Dados Monitorados</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
 
 
 </body>
