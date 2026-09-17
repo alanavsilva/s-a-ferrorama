@@ -9,6 +9,12 @@
 }
 
 .pagina {
+.pagina-login {
+  background: #9b0f0f;
+}
+
+.pagina 
+.pagina_sensor {
   display: flex;
   min-height: 100vh;
 }
