@@ -39,7 +39,7 @@ if ($resultado->num_rows > 0) {
 
 </head>
 
-<body>
+<body class="body_login">
     <main class="pagina-login">
         <section class="login-vizualização" id="login">
             <div class="painel-introducao">

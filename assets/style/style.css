@@ -8,6 +8,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.body_login {
+  background: #f8f8f8;
+}
+
 .pagina {
   display: flex;
   min-height: 100vh;
