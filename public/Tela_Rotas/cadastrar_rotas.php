@@ -77,3 +77,26 @@
           </b>
         </div>
       </header>
+
+       <tbody id="tabela-sensores">
+          
+          <form class="formulario" method="POST">
+            <div>
+              <label for="nome">Nome da rota</label>
+              <input type="text" id="nome" placeholder="Nome da rota" required>
+            </div>
+            
+            <div>
+              <label for="extensao">Extensão(km)</label>
+              <input type="number" id="extensao" placeholder="Ex:45" required>
+            </div>
+
+            <div>
+              <label for="minutos">Tempo estimado(min)</label>
+              <input type="number" id="minutos" placeholder="Ex:30" required>
+            </div>
+
+          <button type="submit">Cadastrar Rota</button>
+        </form>
+      </details>
+      
