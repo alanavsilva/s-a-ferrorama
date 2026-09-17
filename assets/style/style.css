@@ -8,11 +8,11 @@
   font-family: Arial, sans-serif;
 }
 
-.body_login {
-  background: #f8f8f8;
+.pagina-login {
+  background: #9b0f0f;
 }
 
-.pagina {
+.pagina 
 .pagina_sensor {
   display: flex;
   min-height: 100vh;
@@ -213,3 +213,4 @@ td {
 .escondido {
   display: none;
 }
+
