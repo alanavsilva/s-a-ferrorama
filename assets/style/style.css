@@ -355,3 +355,400 @@ td {
 .escondido {
   display: none;
 }
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eeeeee;
+  font-family: Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+/* ===== Layout geral ===== */
+.layout-user {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.sidebar-user {
+  width: 240px;
+  min-height: 100vh;
+  padding: 22px 18px;
+  color: #fff;
+  background: linear-gradient(180deg, #2b0004 0%, #7a151b 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-user {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 18px;
+}
+
+.logo-user::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.logo-box-user {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.logo-box-user span {
+  width: 42px;
+  height: 26px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.logo-user p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* ===== Menu lateral ===== */
+.menu-user {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-user a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+.menu-user a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* item ativo — "Usuários" (2º link) */
+.menu-user a:nth-child(2) {
+  background: #fff;
+  color: #6e1423;
+}
+
+/* Logout no fundo da sidebar */
+.logout-user {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+.logout-user:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Conteúdo principal ===== */
+.content-user {
+  flex: 1;
+  padding: 32px 48px;
+  position: relative;
+}
+
+.painel-user {
+  color: #6e1423;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 4px;
+}
+
+.content-user>h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.content-user>h2 {
+  margin: 0 0 28px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #6e1423;
+}
+
+/* ===== Badge Admin (canto superior direito) ===== */
+.admin-badge-user {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 12px;
+}
+
+.admin-badge-user .avatar-user {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #6e1423;
+}
+
+.admin-badge-user strong {
+  display: block;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.admin-badge-user span {
+  color: #6e1423;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+/* ===== Botão grande CADASTRAR NOVO USUÁRIO ===== */
+.btn-cadastrar-user {
+  display: block;
+  width: 100%;
+  max-width: 810px;
+  margin: 0 auto 32px;
+  padding: 16px;
+  background: #4a0f18;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cadastrar-user:hover {
+  background: #6e1423;
+}
+
+/* ===== Seção de cadastro (escondida por padrão) ===== */
+.cadastro-usuario {
+  display: none;
+}
+
+.cadastro-usuario.ativo {
+  display: block;
+  max-width: 810px;
+  margin: 0 auto 32px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 40px 40px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cadastro-usuario .painel-user {
+  color: #6e1423;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin: 0 0 4px;
+}
+
+.cadastro-usuario h1 {
+  color: #1a1a1a;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.cadastro-usuario h2 {
+  color: #6e1423;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 24px;
+}
+
+.cadastro-usuario .form-cadastro-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+}
+
+.cadastro-usuario .campo-user label {
+  display: block;
+  color: #6e1423;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.cadastro-usuario .campo-user input,
+.cadastro-usuario .campo-user select {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  outline: none;
+}
+
+.cadastro-usuario .campo-user input:focus,
+.cadastro-usuario .campo-user select:focus {
+  border-color: #6e1423;
+}
+
+.cadastro-usuario .btn-cadastrar-form,
+.cadastro-usuario .btn-cadastrar-form-user {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  background: #4a0f18;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cadastro-usuario .btn-cadastrar-form:hover,
+.cadastro-usuario .btn-cadastrar-form-user:hover {
+  background: #6e1423;
+}
+
+/* ===== Caixa de busca ===== */
+.buscar-box-user {
+  display: block;
+  background: #fff;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  max-width: 810px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buscar-box-user label {
+  display: block;
+  color: #6e1423;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.buscar-box-user input,
+.buscar-box-user .form-control-user {
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 13px;
+  outline: none;
+}
+
+/* ===== Tabela ===== */
+.tabela-usuarios {
+  width: 100%;
+  max-width: 810px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tabela-usuarios thead {
+  background: #d9d9d9;
+}
+
+.tabela-usuarios thead th {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.tabela-usuarios tbody td {
+  padding: 18px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6e1423;
+  border-bottom: 1px solid #eee;
+}
+
+.tabela-usuarios tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* botão lixeira */
+.btn-lixeira-user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.btn-lixeira-user::before {
+  content: "🗑";
+  font-size: 20px;
+  color: #6e1423;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-lixeira-user:hover {
+  background: #f5e6e8;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #6e1423;
+  font-size: 12px;
+}
+
+footer p {
+  margin: 0;
+}
