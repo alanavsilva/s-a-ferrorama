@@ -10,8 +10,8 @@
 
 </head>
 
-<body>
-   <div class="pagina">
+<body class="body_geral">
+   <div class="pagina_sensor">
 
     <aside class="menu">
        <img class="logo-trem"
@@ -79,71 +79,75 @@
       </header>
 
   <section id="visualizacao">
-        <button class="botao" onclick="abrirCadastro()">
-          CADASTRAR NOVO SENSOR
-        </button>
-
-        <div class="buscar">
-          <label for="pesquisa">Buscar</label>
-          <input id="pesquisa" type="text" placeholder="Nome do sensor">
-        </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th>ID do Sensor</th>
-              <th>Nome do sensor</th>
-              <th>Trem vinculado</th>
-              <th>Rota vinculada</th>
-              <th>Dados Monitorados</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-
-    <details>
+       <details>
 
         <summary class="botao">
           CADASTRAR NOVO SENSOR
         </summary>
 
-         <div class="formulario">
-          <div>
-            <label for="nome">Nome do sensor</label>
-            <input type="text" id="nome" placeholder="Nome do sensor" required>
-          </div>
-
-          <div>
-            <label for="tipo">Tipo de dado coletado</label>
-            <select id="tipo" required>
-              <option>Selecione o tipo</option>
-              <option>Velocidade</option>
-              <option>Temperatura</option>
-              <option>Status</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="trem">Trem vinculado</label>
-            <select id="trem" required>
-              <option>Trem</option>
-              <option>Trem 01</option>
-              <option>Trem 02</option>
-              <option>Trem 03</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="rota">Rota vinculada</label>
-            <select id="rota" required>
-              <option>Rota</option>
-              <option>Rota Norte</option>
+      
+        <tbody id="tabela-sensores">
+          
+          <form class="formulario" method="POST">
+            <div>
+              <label for="nome">Nome do sensor</label>
+              <input type="text" id="nome" placeholder="Nome do sensor" required>
+            </div>
+            
+            <div>
+              <label for="tipo">Tipo de dado coletado</label>
+              <select id="tipo" required>
+                <option>Selecione o tipo</option>
+                <option>Velocidade</option>
+                <option>Temperatura</option>
+                <option>Status</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="trem">Trem vinculado</label>
+                <select id="trem" required>
+                  <option>Trem</option>
+                  <option>Trem 01</option>
+                  <option>Trem 02</option>
+                  <option>Trem 03</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="rota">Rota vinculada</label>
+                <select id="rota" required>
+                  <option>Rota</option>
+                  <option>Rota Norte</option>
               <option>Rota Sul</option>
               <option>Rota Leste</option>
               <option>Rota Oeste</option>
             </select>
           </div>
-        </div>
-</details>
+          <button type="submit">Cadastrar Sensor</button>
+        </form>
+      </details>
+      
+      <div class="buscar">
+        <label for="pesquisa">Buscar</label>
+        <input id="pesquisa" type="text" placeholder="Nome do sensor">
+      </div>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>ID do Sensor</th>
+            <th>Nome do sensor</th>
+            <th>Trem vinculado</th>
+            <th>Rota vinculada</th>
+            <th>Dados Monitorados</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+    </tbody>
+  </table>
+</section>
+</main>
 
  <script src="validacao.js"></script>
  <link rel="stylesheet" href="../../assets/style/style.css">
