@@ -8,13 +8,11 @@
   font-family: Arial, sans-serif;
 }
 
-.pagina {
 .pagina-login {
   background: #9b0f0f;
 }
 
-.pagina 
-.pagina_sensor {
+.pagina {
   display: flex;
   min-height: 100vh;
 }
@@ -58,7 +56,23 @@
   border-radius: 25px;
   font-size: 11px;
   font-weight: bold;
+
 }
+
+ .icone {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: currentColor;
+    -webkit-mask-image: var(--icon);
+    mask-image: var(--icon);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+ }
 
 .menu a img {
   width: 17px;
