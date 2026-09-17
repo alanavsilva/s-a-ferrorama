@@ -11,7 +11,7 @@
 </head>
 
 <body class="body_geral">
-   <div class="pagina_sensor">
+   <div class="pagina">
 
     <aside class="menu">
        <img class="logo-trem"
@@ -19,42 +19,42 @@
     alt="Logo TremTech">
 
   <p class="marca">SISTEMA TREMTECH</p>
-     <a href="index.html">
+     <a href="../../public/Tela_Home/home.php">
   <img src="https://img.icons8.com/ios-filled/18/ffffff/home.png" alt="">
   Home
 </a>
 
-<a href="usuarios.html">
+<a href="../../public/Tela_Usuario/cadastrar_usuario.php">
   <img src="https://img.icons8.com/ios-filled/18/ffffff/user.png" alt="">
   Usuários
 </a>
 
-<a class="ativo" href="sensores.html">
+<a class="ativo" href="../../public/Tela_Sensores/cadastrar_sensores.php">
   <img src="https://img.icons8.com/ios-filled/18/701015/radio-waves.png" alt="">
   Sensores
 </a>
 
-<a href="monitoramento.html">
-  <img src="https://img.icons8.com/ios-filled/18/ffffff/visible.png" alt="">
-  Monitoramento
-</a>
-
-<a href="relatorios.html">
-  <img src="https://img.icons8.com/ios-filled/18/ffffff/report-card.png" alt="">
-  Relatórios
-</a>
-
-<a href="trens.html">
+<a href="../../public/Tela_Trens/cadastrar_trens.php">
   <img src="https://img.icons8.com/ios-filled/18/ffffff/train.png" alt="">
   Trem
 </a>
 
-<a href="rotas.html">
+<a href="../../public/Tela_Rotas/cadastrar_rotas.php">
   <img src="https://img.icons8.com/ios-filled/18/ffffff/map.png" alt="">
   Rota
 </a>
+<a href="../../public/Tela_Monitoramento/monitoramento.php">
+  <img src="https://img.icons8.com/ios-filled/18/ffffff/visible.png" alt="">
+  Monitoramento
+</a>
 
-<a class="logout" href="login.html">
+<a href="../../public/Tela_Relatorios/relatorios.php">
+  <img src="https://img.icons8.com/ios-filled/18/ffffff/report-card.png" alt="">
+  Relatórios
+</a>
+
+
+<a class="logout" href="../../index.php">
   <img src="https://img.icons8.com/ios-filled/18/ffffff/logout-rounded.png" alt="">
   Logout
 </a>

@@ -8,7 +8,7 @@
   font-family: Arial, sans-serif;
 }
 
-.pagina_sensor {
+.pagina {
   display: flex;
   min-height: 100vh;
 }
