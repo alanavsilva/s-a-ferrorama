@@ -12,3 +12,61 @@ body {
   display: flex;
   min-height: 100vh;
 }
+
+.menu {
+  width: 215px;
+  min-height: 100vh;
+  padding: 18px 12px;
+  position: relative;
+  color: white;
+  background: linear-gradient(135deg, #260002, #7a151b);
+}
+
+.logo-trem {
+  display: block;
+  width: 75px;
+  height: 75px;
+  margin: auto;
+  object-fit: contain;
+}
+
+.marca {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.menu hr {
+  margin: 18px;
+  border: 1px solid #ddd;
+}
+
+.menu a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 11px 14px;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.menu a img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.menu .ativo {
+  color: #701015;
+  background: white;
+}
+
+.logout {
+  position: absolute;
+  bottom: 18px;
+}
+
