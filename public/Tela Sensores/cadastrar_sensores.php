@@ -8,178 +8,59 @@
 
   <link rel="stylesheet" href="../assets/style/style.css">
 
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
 
 <body>
+   <div class="pagina">
 
-  <div class="container-geral">
+    <aside class="menu">
+      <img class="logo-trem"
+        src="https://img.icons8.com/ios/100/ffffff/train.png"
+        alt="Logo TremTech">
+ <p class="marca">SISTEMA TREMTECH</p>
+      <hr>
 
-    <aside class="menu-lateral">
+      <a href="#">
+        <img src="https://img.icons8.com/ios-filled/18/ffffff/home.png" alt="">
+        Home
+      </a>
 
-      <div class="logo-sistema">
+      <a href="#">
+        <img src="https://img.icons8.com/ios-filled/18/ffffff/user.png" alt="">
+        Usuários
+      </a>
 
-        <div class="icone-logo">
-          <i class="fa-solid fa-train-subway"></i>
-        </div>
+      <a class="ativo" href="#">
+        <img src="https://img.icons8.com/ios-filled/18/701015/radio-waves.png" alt="">
+        Sensores
+      </a>
 
-        <h2>SISTEMA TREMTECH</h2>
+      <a href="#">
+        <img src="https://img.icons8.com/ios-filled/18/ffffff/visible.png" alt="">
+        Monitoramento
+      </a>
 
-      </div>
+      <a href="#">
+        <img src="https://img.icons8.com/ios-filled/18/ffffff/report-card.png" alt="">
+        Relatórios
+      </a>
 
-      <div class="linha-menu"></div>
+      <a href="#">
+        <img src="https://img.icons8.com/ios-filled/18/ffffff/train.png" alt="">
+        Trem
+      </a>
 
-      <nav class="navegacao-menu">
+      <a href="#">
+        <img src="https://img.icons8.com/ios-filled/18/ffffff/map.png" alt="">
+        Rota
+      </a>
 
-        <a href="tela-geral-home.html" class="item-menu">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span> 
-        </a>
-
-        <a href="tela-vizualização-usuário.html" class="item-menu">
-          <i class="fa-regular fa-user"></i>
-          <span>Usuarios</span>
-        </a>
-
-        <a href="#" class="item-menu menu-ativo">
-          <i class="fa-solid fa-crosshairs"></i>
-          <span>Sensores</span>
-        </a>
-
-        <a href="#" class="item-menu">
-          <i class="fa-solid fa-wave-square"></i>
-          <span>Monitoramento</span>
-        </a>
-
-        <a href="#" class="item-menu">
-          <i class="fa-regular fa-file-lines"></i>
-          <span>Relatorios</span>
-        </a>
-
-      </nav>
-
+      <a class="logout" href="#">
+        <img src="https://img.icons8.com/ios-filled/18/ffffff/logout-rounded.png" alt="">
+        Logout
+      </a>
     </aside>
 
-    <main class="area-principal">
-
-      
-      <div class="cabecalho">
-
-        <div class="textos-cabecalho">
-
-          <h4>PAINEL FUNCIONARIO/CLIENTE</h4>
-
-          <h1>Controle de sensores cadastrados</h1>
-
-        </div>
-
-        <div class="cartao-perfil">
-
-          <div class="foto-perfil"></div>
-
-          <div class="dados-perfil">
-            <h3>Alana</h3>
-            <p>alana_v_silva</p>
-          </div>
-
-        </div>
-
-      </div>
-
-      
-      <section class="area-sensores">
-
-        <h2>Sensores do sistema</h2>
-
-        <div class="grade-formulario">
-
-          <div class="grupo-campo">
-
-            <label>Nome do sensor</label>
-
-            <input type="text" placeholder="Ex: Velocimetro C9">
-
-          </div>
-
-          <div class="grupo-campo">
-
-            <label>Localizacao</label>
-
-            <input type="text" placeholder="Ex: Km 52 - Linha Sul">
-
-          </div>
-
-          <div class="grupo-campo">
-
-            <label>Tipo de dado monitorado</label>
-
-            <select>
-              <option>Todos: velocidade, temperatura e falha</option>
-            </select>
-
-          </div>
-
-          <div class="grupo-campo">
-
-            <label>Trem vinculado</label>
-
-            <select>
-              <option>TR-01 - Expresso Norte</option>
-            </select>
-
-          </div>
-
-        </div>
-
-        <button class="botao-cadastrar">
-          <i class="fa-solid fa-plus"></i>
-          Cadastrar novo sensor
-        </button>
-
-      </section>
-
-     
-      <section class="area-listagem">
-
-        <div class="topo-listagem">
-
-          <h2>Listar Sensores da Ferrovia</h2>
-
-          <button class="botao-secundario">
-
-            <i class="fa-regular fa-sun"></i>
-
-            Cadastro de Sensores e Trens
-
-          </button>
-
-        </div>
-
-        <div class="caixa-tabela">
-
-          <div class="filtro-status">
-
-            <label>Filtro por status</label>
-
-            <select>
-              <option>Todos</option>
-            </select>
-
-          </div>
-
-        </div>
-
-
-
-
-
-    
-      </section>
-
-    </main>
-
-  </div>
 
 </body>
 </html>
