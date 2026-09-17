@@ -9,11 +9,12 @@
 
    
 </head>
-   
-     <div class="layout">
-    <aside class="sidebar">
-      <div class="logo">
-        <div class="logo-box">
+   <body>
+    
+     <div class="layout-user">
+    <aside class="sidebar-user">
+      <div class="logo-user">
+        <div class="logo-box-user">
         <span></span>
         <span></span>
         <span></span>
@@ -21,7 +22,7 @@
         <p>SISTEMA TREMTECH</p>
       </div>
 
-      <nav class="menu">
+      <nav class="menu-user">
           <a href="public/Tela_Home/home.php">Home</a>
           <a href="">Usuários</a>
           <a href="public/Tela_Sensores/cadastrar_sensores.php">Sensores</a>
@@ -31,15 +32,16 @@
 
       </nav>
 
-      <a href="#" class="logout">Logout</a>
+      <a href="#" class="logout-user">Logout</a>
     </aside>
 
-    <main class="content">
-      <p class="painel">PAINEL ADMINISTRATIVO</p>
+    <main class="content-user">
+      <p class="painel-user">PAINEL ADMINISTRATIVO</p>
       <h1>Controle de usuários cadastrados</h1>
       <h2>Funcionários e clientes</h2>
 
-      <button class="btn-cadastrar">CADASTRAR NOVO USUÁRIO</button>
+
+      <button class="btn-cadastrar-user">CADASTRAR NOVO USUÁRIO</button>
 
       
 <section class="cadastro-usuario" id="cadastro">
@@ -50,15 +52,6 @@
       <span>alana.veiga</span>
     </div>
   </div>
-
-  
-    <footer class="text-center mt-5 pt-3">
-    <p class= "text-white- 50 small">
-        <i class="bi bi-shield-check me-1"></i>Sistema seguro
-    </p> 
-
-    </footer>
-      
 
   <p class="painel-user">PAINEL ADMINISTRATIVO</p>
   <h1>Controle de usuários cadastrados</h1>
@@ -89,15 +82,15 @@
         <option>Administrador</option>
       </select>
     </div>
+
   </form>
 
   <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
 </section>
 
-
-      <section class="buscar-box">
+      <section class="buscar-box-user">
       <label for="buscar">Buscar</label>
-      <input type="text" id="buscar" class="form-control" placeholder="Nome ou email">
+      <input type="text" id="buscar" class="form-control-user" placeholder="Nome ou email">
       </section>
       <table class="table tabela-usuarios">
     <thead>
@@ -118,7 +111,7 @@
         <td>nicole_b_silva@gmail.com</td>
         <td>Cliente</td>
         <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
 
@@ -127,7 +120,7 @@
       <td>alana_v_silva@gmail.com</td>
       <td>Administrador</td>
       <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
   
@@ -137,7 +130,7 @@
       <td>piettra_cidral@gmail.com</td>
       <td>Cliente</td>
       <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
 
@@ -146,7 +139,7 @@
       <td>maria.fernanda@gmail.com</td>
       <td>Administrador</td>
       <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
 
@@ -155,17 +148,22 @@
       <td>jose.andrade@gmail.com</td>
       <td>Administrador</td>
       <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
+ </tbody>
+      </table>
 
- 
+      </main>
+    </div>
 
-  <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
-</section>
- <script src="../../script/validacao.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <footer class="text-center mt-5 pt-3">
+      <p class="text-white-50 small">
+        <i class="bi bi-shield-check me-1"></i>Sistema seguro
+      </p>
+    </footer>
+
+    <script src="../../script/validacao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ...></script>
+  </body>
 </html>
-
-

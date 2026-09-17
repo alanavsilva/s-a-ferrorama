@@ -167,7 +167,7 @@ function cadastrarSensor() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const btnAbrir = document.querySelector('.btn-cadastrar');
+    const btnAbrir = document.querySelector('.btn-cadastrar-user');
     const formCadastro = document.querySelector('.cadastro-usuario');
 
     if (btnAbrir && formCadastro) {
@@ -176,3 +176,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
