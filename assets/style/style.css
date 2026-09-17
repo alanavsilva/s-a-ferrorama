@@ -139,10 +139,40 @@ h2 {
   background: #680004;
 }
 
+.campo_inteiro{
+  grid-column: 1 / -1;
+}
 
+.botao {
+  display: flex;
+  width: 92%;
+  margin: 0 auto 20px;
+  padding: 13px;
+  border: 0;
+  border-radius: 25px;
+  color: white;
+  background: #650003;
+  font-size: 11px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
 
-
-
+.botao_largo{
+  display: flex;
+  width: 92%;
+  margin: 0 auto 20px;
+  padding: 13px;
+  border: 0;
+  border-radius: 25px;
+  color: white;
+  background: #650003;
+  font-size: 11px;
+  font-weight: bold;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
+}
 
 
 
@@ -265,19 +295,6 @@ h2 {
   background: #6e1423;
 }
 
-.botao {
-  display: block;
-  width: 92%;
-  margin: 0 auto 20px;
-  padding: 13px;
-  border: 0;
-  border-radius: 25px;
-  color: white;
-  background: #650003;
-  font-size: 11px;
-  font-weight: bold;
-  cursor: pointer;
-}
 
 .voltar {
   padding: 5px;
