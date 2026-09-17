@@ -1,6 +1,6 @@
 <?php
 
-include "conexao.php";
+include  "../infra/conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -35,13 +35,11 @@ if ($resultado->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="stylesheet" href="../../assets/style/style.css">
 
 </head>
 
-<body>
+<body class="body_login">
     <main class="pagina-login">
         <section class="login-vizualização" id="login">
             <div class="painel-introducao">
@@ -84,6 +82,7 @@ if ($resultado->num_rows > 0) {
 </main>
     <footer>
     </footer>
+    <link reel="stylesheet" href="../style/style.css"> 
     <script src="../script/validacao.js"></script>
 </body>
 </html>
