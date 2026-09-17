@@ -183,5 +183,28 @@ select {
   background: white;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 12px;
+}
+
+th {
+  padding: 10px;
+  background: #d9d9d9;
+  color: black;
+  font-size: 11px;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #eee;
+  color: #741016;
+  text-align: center;
+  font-weight: bold;
+}
+
+
 
 
