@@ -9,37 +9,68 @@
 
    
 </head>
-   
-     <div class="layout">
-    <aside class="sidebar">
-      <div class="logo">
-        <div class="logo-box">
-        <span></span>
-        <span></span>
-        <span></span>
-        </div>
-        <p>SISTEMA TREMTECH</p>
-      </div>
+   <body>
+    
+   <body class="body_geral">
+   <div class="pagina">
 
-      <nav class="menu">
-          <a href="public/Tela_Home/home.php">Home</a>
-          <a href="">Usuários</a>
-          <a href="public/Tela_Sensores/cadastrar_sensores.php">Sensores</a>
-          <a href="#">Monitoramento</a>
-          <a href="#">Relatórios</a>
-          <a href="#">Sensores</a>
+    <aside class="menu">
+       <img class="logo-trem"
+    src="https://img.icons8.com/ios/100/ffffff/train.png"
+    alt="Logo TremTech">
 
-      </nav>
+  <p class="marca">SISTEMA TREMTECH</p>
+     <a href="../../public/Tela_Home/home.php">
+  <span class="icone" style="mask-image: url('https://img.icons8.com/ios-filled/18/000000/home.png'); -webkit-mask-image: url('https://img.icons8.com/ios-filled/18/000000/home.png');"></span>
+  Home
+</a>
 
-      <a href="#" class="logout">Logout</a>
+<a class="ativo" href="../../public/Tela_Usuario/cadastrar_usuario.php">
+  <span class="icone" style="mask-image: url('https://img.icons8.com/ios-filled/18/000000/user.png'); -webkit-mask-image: url('https://img.icons8.com/ios-filled/18/000000/user.png');"></span>
+  Usuários
+</a>
+
+<a href="../../public/Tela_Sensores/cadastrar_sensores.php">
+  <span class="icone" style="mask-image: url('https://img.icons8.com/ios-filled/18/701015/radio-waves.png'); -webkit-mask-image: url('https://img.icons8.com/ios-filled/18/701015/radio-waves.png');"></span>
+  Sensores
+</a>
+
+<a href="../../public/Tela_Trens/cadastrar_trens.php">
+  <span class="icone" style="mask-image: url('https://img.icons8.com/ios-filled/18/000000/train.png'); -webkit-mask-image: url('https://img.icons8.com/ios-filled/18/000000/train.png');"></span>
+  Trem
+</a>
+
+<a href="../../public/Tela_Rotas/cadastrar_rotas.php">
+  <span class="icone" style="mask-image: url('https://img.icons8.com/ios-filled/18/000000/map.png'); -webkit-mask-image: url('https://img.icons8.com/ios-filled/18/000000/map.png');"></span>
+  Rota
+</a>
+<a href="../../public/Tela_Monitoramento/monitoramento.php">
+  <span class="icone" style="mask-image: url('https://img.icons8.com/ios-filled/18/000000/visible.png'); -webkit-mask-image: url('https://img.icons8.com/ios-filled/18/000000/visible.png');"></span>
+  Monitoramento
+</a>
+
+<a href="../../public/Tela_Relatorios/relatorios.php">
+  <span class="icone" style="mask-image: url('https://img.icons8.com/ios-filled/18/000000/report-card.png'); -webkit-mask-image: url('https://img.icons8.com/ios-filled/18/000000/report-card.png');"></span>
+  Relatórios
+</a>
+
+
+<a class="logout" href="../../index.php">
+  <span class="icone" style="mask-image: url('https://img.icons8.com/ios-filled/18/000000/logout-rounded.png'); -webkit-mask-image: url('https://img.icons8.com/ios-filled/18/000000/logout-rounded.png');"></span>
+  Logout
+</a>
     </aside>
 
-    <main class="content">
-      <p class="painel">PAINEL ADMINISTRATIVO</p>
+      <a href="#" class="logout-user">Logout</a>
+    </aside>
+
+    <main class="content-user">
+      <p class="painel-user">PAINEL ADMINISTRATIVO</p>
       <h1>Controle de usuários cadastrados</h1>
       <h2>Funcionários e clientes</h2>
 
-      <button class="btn-cadastrar">CADASTRAR NOVO USUÁRIO</button>
+
+      <button class="btn-cadastrar-user">CADASTRAR NOVO USUÁRIO</button>
 
       
 <section class="cadastro-usuario" id="cadastro">
@@ -50,15 +81,6 @@
       <span>alana.veiga</span>
     </div>
   </div>
-
-  
-    <footer class="text-center mt-5 pt-3">
-    <p class= "text-white- 50 small">
-        <i class="bi bi-shield-check me-1"></i>Sistema seguro
-    </p> 
-
-    </footer>
-      
 
   <p class="painel-user">PAINEL ADMINISTRATIVO</p>
   <h1>Controle de usuários cadastrados</h1>
@@ -89,15 +111,15 @@
         <option>Administrador</option>
       </select>
     </div>
+
   </form>
 
   <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
 </section>
 
-
-      <section class="buscar-box">
+      <section class="buscar-box-user">
       <label for="buscar">Buscar</label>
-      <input type="text" id="buscar" class="form-control" placeholder="Nome ou email">
+      <input type="text" id="buscar" class="form-control-user" placeholder="Nome ou email">
       </section>
       <table class="table tabela-usuarios">
     <thead>
@@ -118,7 +140,7 @@
         <td>nicole_b_silva@gmail.com</td>
         <td>Cliente</td>
         <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
 
@@ -127,7 +149,7 @@
       <td>alana_v_silva@gmail.com</td>
       <td>Administrador</td>
       <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
   
@@ -137,7 +159,7 @@
       <td>piettra_cidral@gmail.com</td>
       <td>Cliente</td>
       <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
 
@@ -146,7 +168,7 @@
       <td>maria.fernanda@gmail.com</td>
       <td>Administrador</td>
       <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
 
@@ -155,17 +177,22 @@
       <td>jose.andrade@gmail.com</td>
       <td>Administrador</td>
       <td>
-          <button class="btn-lixeira"></button>
+          <button class="btn-lixeira-user"></button>
         </td>
       </tr>
+ </tbody>
+      </table>
 
- 
+      </main>
+    </div>
 
-  <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
-</section>
- <script src="../../script/validacao.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <footer class="text-center mt-5 pt-3">
+      <p class="text-white-50 small">
+        <i class="bi bi-shield-check me-1"></i>Sistema seguro
+      </p>
+    </footer>
+
+    <script src="../../script/validacao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ...></script>
+  </body>
 </html>
-
-
