@@ -6,7 +6,7 @@
 
   <title>TremTech</title>
 
-  <link rel="stylesheet" href="../assets/style/style.css">
+  <link rel="stylesheet" href="../../assets/style/style.css">
 
 </head>
 
@@ -14,51 +14,50 @@
    <div class="pagina">
 
     <aside class="menu">
-      <img class="logo-trem"
-        src="https://img.icons8.com/ios/100/ffffff/train.png"
-        alt="Logo TremTech">
- <p class="marca">SISTEMA TREMTECH</p>
-      <hr>
+       <img class="logo-trem"
+    src="https://img.icons8.com/ios/100/ffffff/train.png"
+    alt="Logo TremTech">
 
-      <a href="#">
-        <img src="https://img.icons8.com/ios-filled/18/ffffff/home.png" alt="">
-        Home
-      </a>
+  <p class="marca">SISTEMA TREMTECH</p>
+     <a href="index.html">
+  <img src="https://img.icons8.com/ios-filled/18/ffffff/home.png" alt="">
+  Home
+</a>
 
-      <a href="#">
-        <img src="https://img.icons8.com/ios-filled/18/ffffff/user.png" alt="">
-        Usuários
-      </a>
+<a href="usuarios.html">
+  <img src="https://img.icons8.com/ios-filled/18/ffffff/user.png" alt="">
+  Usuários
+</a>
 
-      <a class="ativo" href="#">
-        <img src="https://img.icons8.com/ios-filled/18/701015/radio-waves.png" alt="">
-        Sensores
-      </a>
+<a class="ativo" href="sensores.html">
+  <img src="https://img.icons8.com/ios-filled/18/701015/radio-waves.png" alt="">
+  Sensores
+</a>
 
-      <a href="#">
-        <img src="https://img.icons8.com/ios-filled/18/ffffff/visible.png" alt="">
-        Monitoramento
-      </a>
+<a href="monitoramento.html">
+  <img src="https://img.icons8.com/ios-filled/18/ffffff/visible.png" alt="">
+  Monitoramento
+</a>
 
-      <a href="#">
-        <img src="https://img.icons8.com/ios-filled/18/ffffff/report-card.png" alt="">
-        Relatórios
-      </a>
+<a href="relatorios.html">
+  <img src="https://img.icons8.com/ios-filled/18/ffffff/report-card.png" alt="">
+  Relatórios
+</a>
 
-      <a href="#">
-        <img src="https://img.icons8.com/ios-filled/18/ffffff/train.png" alt="">
-        Trem
-      </a>
+<a href="trens.html">
+  <img src="https://img.icons8.com/ios-filled/18/ffffff/train.png" alt="">
+  Trem
+</a>
 
-      <a href="#">
-        <img src="https://img.icons8.com/ios-filled/18/ffffff/map.png" alt="">
-        Rota
-      </a>
+<a href="rotas.html">
+  <img src="https://img.icons8.com/ios-filled/18/ffffff/map.png" alt="">
+  Rota
+</a>
 
-      <a class="logout" href="#">
-        <img src="https://img.icons8.com/ios-filled/18/ffffff/logout-rounded.png" alt="">
-        Logout
-      </a>
+<a class="logout" href="login.html">
+  <img src="https://img.icons8.com/ios-filled/18/ffffff/logout-rounded.png" alt="">
+  Logout
+</a>
     </aside>
 
     <main class="conteudo">
@@ -101,10 +100,11 @@
             </tr>
           </thead>
 
-    <section id="cadastro" class="escondido">
-        <button class="voltar" onclick="voltarTabela()">
-          <img src="https://img.icons8.com/ios-filled/22/000000/long-arrow-left.png" alt="Voltar">
-        </button>
+    <details>
+
+        <summary class="botao">
+          CADASTRAR NOVO SENSOR
+        </summary>
 
          <div class="formulario">
           <div>
@@ -143,8 +143,10 @@
             </select>
           </div>
         </div>
+</details>
+
  <script src="validacao.js"></script>
- <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="../../assets/style/style.css">
 
 </body>
 </html>
