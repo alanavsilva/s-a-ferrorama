@@ -106,5 +106,43 @@
           <img src="https://img.icons8.com/ios-filled/22/000000/long-arrow-left.png" alt="Voltar">
         </button>
 
+         <div class="formulario">
+          <div>
+            <label for="nome">Nome do sensor</label>
+            <input type="text" id="nome" placeholder="Nome do sensor" required>
+          </div>
+
+          <div>
+            <label for="tipo">Tipo de dado coletado</label>
+            <select id="tipo" required>
+              <option>Selecione o tipo</option>
+              <option>Velocidade</option>
+              <option>Temperatura</option>
+              <option>Status</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="trem">Trem vinculado</label>
+            <select id="trem" required>
+              <option>Trem</option>
+              <option>Trem 01</option>
+              <option>Trem 02</option>
+              <option>Trem 03</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="rota">Rota vinculada</label>
+            <select id="rota" required>
+              <option>Rota</option>
+              <option>Rota Norte</option>
+              <option>Rota Sul</option>
+              <option>Rota Leste</option>
+              <option>Rota Oeste</option>
+            </select>
+          </div>
+        </div>
+
 </body>
 </html>
