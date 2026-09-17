@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eeeeee;
+  font-family: Arial, sans-serif;
+}
+
+.pagina {
+  display: flex;
+  min-height: 100vh;
+}
