@@ -151,4 +151,12 @@ const loginForm = document.getElementById('loginForm');
                 console.error('Formulário não encontrado!');
             }
        
-   
+   //cadastro sensores
+  let sensores = [];
+
+  function cadastrarSensor() {
+let sensor = { nome: document.getElementById("nome").value, 
+    tipo: document.getElementById("tipo").value, 
+    trem: document.getElementById("trem").value, 
+    rota: document.getElementById("rota").value }; 
+    sensores.push(sensor); mostrarSensores(); } 
