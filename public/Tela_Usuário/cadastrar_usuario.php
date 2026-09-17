@@ -6,37 +6,10 @@
     <title>cadastro</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/style/style.css">
+
    
 </head>
-
-<body>
-    
-    <header id="logo-site">
-        <div class="logo">
-        <img src="../../assets/img/Captura de tela 2026-05-07 074754.png" alt="" class="img-fluid">
-       </div>
-    </header>
-
-    <main id="login-cadastro" class="container">
-    <div class="container1">
-    <h2 id="titulo" class="display-6 fw-bold text-primary text-center"> Olá adiministrador!!!</h2>
-    <h3 class="h5 text-muted text-center">Antes de nossa viagem, faça seu cadastro: </h3>
-    <form id="form-login">
-        <div id="c-email" class="conjunto mb-3">
-            <label for="email" class="form-label fw-semibold">
-             <i class="bi bi-envelope-fill me-2"></i>Email:
-             </label>  
-            <input type="email" id="email" class="form-control form-control-lg" placeholder="Digite seu email" required>
-        </div>   
-        <div id="c-senha" class="conjunto mb-4"> 
-            <label for="senha" class="form-label fw-semibold">
-            <i class="bi bi-lock-fill me-2"></i> Senha:
-             </label>
-             <input type="password" id="senha" class="form-control form-control-lg" placeholder="digite sua senha" required>
-        </div>
-        <button type="botao-envio" class="btn btn-primary w-100">Entrar</button>
-    </form>
-
+   
 </div>
 
         
@@ -64,12 +37,12 @@
       </div>
 
       <nav class="menu">
-          <a href="tela-geral-home.html">Home</a>
-          <a href="tela-vizualização-usuário.html">Usuários</a>
-          <a href="#">Sensores</a>
+          <a href="public/Tela_Home/home.php">Home</a>
+          <a href="">Usuários</a>
+          <a href="public/Tela_Sensores/cadastrar_sensores.php">Sensores</a>
           <a href="#">Monitoramento</a>
           <a href="#">Relatórios</a>
-          <a href="#">Logout</a>
+          <a href="#">Sensores</a>
 
       </nav>
 
@@ -81,7 +54,57 @@
       <h1>Controle de usuários cadastrados</h1>
       <h2>Funcionários e clientes</h2>
 
+      
       <button class="btn-cadastrar">CADASTRAR NOVO USUÁRIO</button>
+
+<section class="cadastro-usuario" id="cadastro">
+  <div class="admin-badge-user">
+    <div class="avatar-user"></div>
+    <div>
+      <strong>Admin</strong>
+      <span>alana.veiga</span>
+    </div>
+  </div>
+
+  <p class="painel-user">PAINEL ADMINISTRATIVO</p>
+  <h1>Controle de usuários cadastrados</h1>
+  <h2>Funcionários e Clientes</h2>
+
+  <form class="form-cadastro-user">
+    <div class="campo-user">
+      <label for="nome">Nome de usuário</label>
+      <input type="text" id="nome" placeholder="Nome completo">
+    </div>
+
+    <div class="campo-user">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Email">
+    </div>
+
+    <div class="campo-user">
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" placeholder="Senha">
+    </div>
+    
+
+    <div class="campo-user">
+      <label for="tipo">Tipo de usuário</label>
+      <select id="tipo">
+        <option>Funcionário</option>
+        <option>Cliente</option>
+        <option>Administrador</option>
+      </select>
+    </div>
+  </form>
+
+  <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
+</section>
+
+
+
+
+
+
 
       <section class="buscar-box">
       <label for="buscar">Buscar</label>
@@ -186,3 +209,5 @@
 
 </body>
 </html>
+
+
