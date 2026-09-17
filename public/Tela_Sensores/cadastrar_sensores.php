@@ -101,6 +101,10 @@
             </tr>
           </thead>
 
+    <section id="cadastro" class="escondido">
+        <button class="voltar" onclick="voltarTabela()">
+          <img src="https://img.icons8.com/ios-filled/22/000000/long-arrow-left.png" alt="Voltar">
+        </button>
 
 </body>
 </html>
