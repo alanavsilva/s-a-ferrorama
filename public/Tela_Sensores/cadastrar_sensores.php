@@ -61,6 +61,25 @@
       </a>
     </aside>
 
+    <main class="conteudo">
+      <header>
+        <div>
+          <small>PAINEL ADMINISTRATIVO</small>
+          <h1>Controle de sensores cadastrados</h1>
+          <h2>Sensores do sistema</h2>
+        </div>
+
+        <div class="admin">
+          <div class="foto"></div>
+
+          <b>
+            Admin<br>
+            <span>alana.veiga</span>
+          </b>
+        </div>
+      </header>
+
+
 
 </body>
 </html>
