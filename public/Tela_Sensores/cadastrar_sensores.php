@@ -144,5 +144,7 @@
           </div>
         </div>
  <script src="validacao.js"></script>
+ <link rel="stylesheet" href="style.css">
+
 </body>
 </html>
