@@ -143,6 +143,6 @@
             </select>
           </div>
         </div>
-
+ <script src="validacao.js"></script>
 </body>
 </html>
