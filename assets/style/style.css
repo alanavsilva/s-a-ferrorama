@@ -205,6 +205,9 @@ td {
   font-weight: bold;
 }
 
+.escondido {
+  display: none;
+}
 
 
 
