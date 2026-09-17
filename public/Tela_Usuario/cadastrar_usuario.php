@@ -83,14 +83,6 @@
       </select>
     </div>
 
-    <footer class="text-center mt-5 pt-3">
-    <p class= "text-white- 50 small">
-        <i class="bi bi-shield-check me-1"></i>Sistema seguro
-    </p> 
-
-    </footer>
-      
-
   </form>
 
   <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
