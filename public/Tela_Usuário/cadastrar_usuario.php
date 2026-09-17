@@ -10,21 +10,6 @@
    
 </head>
    
-</div>
-
-        
-    </main>
-
-    <footer class="text-center mt-5 pt-3">
-    <p class= "text-white- 50 small">
-        <i class="bi bi-shield-check me-1"></i>Sistema seguro
-    </p> 
-
-    </footer>
-
-    <script src="../../scripts/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
      <div class="layout">
     <aside class="sidebar">
       <div class="logo">
@@ -54,9 +39,9 @@
       <h1>Controle de usuários cadastrados</h1>
       <h2>Funcionários e clientes</h2>
 
-      
       <button class="btn-cadastrar">CADASTRAR NOVO USUÁRIO</button>
 
+      
 <section class="cadastro-usuario" id="cadastro">
   <div class="admin-badge-user">
     <div class="avatar-user"></div>
@@ -65,6 +50,15 @@
       <span>alana.veiga</span>
     </div>
   </div>
+
+  
+    <footer class="text-center mt-5 pt-3">
+    <p class= "text-white- 50 small">
+        <i class="bi bi-shield-check me-1"></i>Sistema seguro
+    </p> 
+
+    </footer>
+      
 
   <p class="painel-user">PAINEL ADMINISTRATIVO</p>
   <h1>Controle de usuários cadastrados</h1>
@@ -99,11 +93,6 @@
 
   <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
 </section>
-
-
-
-
-
 
 
       <section class="buscar-box">
@@ -170,43 +159,12 @@
         </td>
       </tr>
 
-      <section class="cadastro-usuario" id="cadastro">
-  <p class="painel">PAINEL ADMINISTRATIVO</p>
-  <h1>Controle de usuários cadastrados</h1>
-  <h2>Funcionários e Clientes</h2>
-
-  <form class="form-cadastro">
-    <div class="campo">
-      <label for="nome">Nome de usuário</label>
-      <input type="text" id="nome" placeholder="Nome completo">
-    </div>
-
-    <div class="campo">
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Email">
-    </div>
-
-    <div class="campo">
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" placeholder="Senha">
-    </div>
-
-    <div class="campo">
-      <label for="tipo">Tipo de usuário</label>
-      <select id="tipo">
-        <option>Funcionário</option>
-        <option>Cliente</option>
-        <option>Administrador</option>
-      </select>
-    </div>
-  </form>
+ 
 
   <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
 </section>
-
-      </div>
- </main>
-
+ <script src="../../script/validacao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
 
