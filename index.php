@@ -1,6 +1,7 @@
+
 <?php
 
-include  "../infra/conexao.php";
+include  "infra/conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -29,13 +30,14 @@ if ($resultado->num_rows > 0) {
 
 ?>
 
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página login</title>
-    <link rel="stylesheet" href="../../assets/style/style.css">
+   <link rel="stylesheet" href="assets/style/style.css">
 
 </head>
 
@@ -82,7 +84,7 @@ if ($resultado->num_rows > 0) {
 </main>
     <footer>
     </footer>
-    <link reel="stylesheet" href="../style/style.css"> 
+    <link rel="stylesheet" href="assets/style/style.css">
     <script src="../script/validacao.js"></script>
 </body>
 </html>
