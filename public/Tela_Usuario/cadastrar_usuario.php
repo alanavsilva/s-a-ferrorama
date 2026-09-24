@@ -1,3 +1,37 @@
+<?php
+
+include "../../infra/conexao.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
+    $tipo = $_POST["tipo"];
+
+      if (empty($nome) || empty($email) || empty($senha) || empty($tipo)) {
+        echo "Preencha todos os campos.";
+    } else {
+
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO usuarios (nome, email, senha, tipo)
+                VALUES (?, ?, ?, ?)";
+
+        $stmt = $conexao->prepare($sql);
+
+        $stmt->bind_param("ssss", $nome, $email, $senhaHash, $tipo);
+
+        if ($stmt->execute()) {
+            echo "Usuário cadastrado com sucesso!";
+        } else {
+            echo "Não foi possível cadastrar o usuário.";
+        }
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,26 +120,26 @@
   <h1>Controle de usuários cadastrados</h1>
   <h2>Funcionários e Clientes</h2>
 
-  <form class="form-cadastro-user">
+  <form class="form-cadastro-user" method="POST">
     <div class="campo-user">
       <label for="nome">Nome de usuário</label>
-      <input type="text" id="nome" placeholder="Nome completo">
+      <input type="text" id="nome" name="nome" placeholder="Nome completo">
     </div>
 
     <div class="campo-user">
       <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Email">
+      <input type="email" id="email" name="email" placeholder="Email">
     </div>
 
     <div class="campo-user">
       <label for="senha">Senha</label>
-      <input type="password" id="senha" placeholder="Senha">
+      <input type="password" id="senha" name="senha" placeholder="Senha">
     </div>
     
 
     <div class="campo-user">
       <label for="tipo">Tipo de usuário</label>
-      <select id="tipo">
+      <select id="tipo" name="tipo">
         <option>Funcionário</option>
         <option>Cliente</option>
         <option>Administrador</option>
