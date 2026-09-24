@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if ($tipo === 'Administrador') {
         $tipo = 'admin';
     } else {
-        $tipo = 'usuario';
+        $tipo = 'funcionário';
     }
 
       if (empty($nome) || empty($email) || empty($senha) || empty($tipo)) {
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt = $conn->prepare($sql);
 
-        $stmt->bind_param("ssss", $nome, $email, $tipo);
+        $stmt->bind_param("ssss", $nome, $email, $senha, $tipo);
 
         if ($stmt->execute()) {
             echo "Usuário cadastrado com sucesso!";
@@ -31,9 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Não foi possível cadastrar o usuário.";
         }
     }
+}
     $busca = $_GET['buscar'] ?? '';
 
-    $sql = "SELECT id_usuario, nome, email, tipo_usuario FROM usuarios WHERE nome LIKE ? OR email LIKE ? ORDER BY nome";
+    $sql = "SELECT id_usuario, nome, email, tipo FROM usuarios WHERE nome LIKE ? OR email LIKE ? ORDER BY nome";
 
     $textoBusca = "%" . $busca . "%";
 
@@ -44,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmtBusca->execute();
 
     $resultado = $stmtBusca->get_result();
-}
 
 ?>
 
@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main class="content-user">
       <p class="painel-user">PAINEL ADMINISTRATIVO</p>
       <h1>Controle de usuários cadastrados</h1>
-      <h2>Admiistradores e Funcionários</h2>
+      <h2>Administradores e Funcionários</h2>
 
 
       <button class="btn-cadastrar-user">CADASTRAR NOVO USUÁRIO</button>
@@ -146,10 +146,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </section>
 
-  <p class="painel-user">PAINEL ADMINISTRATIVO</p>
-  <h1>Controle de usuários cadastrados</h1>
-  <h2>Admiistradores e Funcionários</h2>
-
   <form class="form-cadastro-user" method="POST">
     <div class="campo-user">
       <label for="nome">Nome de usuário</label>
@@ -178,12 +174,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
   </form>
-</section>
 
-      <section class="buscar-box-user">
-      <label for="buscar">Buscar</label>
-      <input type="text" id="buscar" class="form-control-user" placeholder="Nome ou email">
-      </section>
+  <?php include "visualizacao_cadastro.php"; ?>
+
+</section>
 
       </main>
     </div>
