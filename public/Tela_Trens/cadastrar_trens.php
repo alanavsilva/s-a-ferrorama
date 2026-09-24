@@ -128,20 +128,8 @@
         </form>
       </details>
       
-      <div class="buscar">
-        <label for="pesquisa">Buscar</label>
-        <input id="pesquisa" type="text" placeholder="Nome do trem">
-      </div>
       
-      <table>
-        <thead>
-          <tr>
-            <th>ID do Trem</th>
-            <th>Nome do trem</th>
-            <th>Trem vinculado</th>
-            <th>Rota vinculada</th>
-            <th>Dados Monitorados</th>
-            <th>Ações</th>
+      
           </tr>
         </thead>
     </tbody>
