@@ -124,7 +124,7 @@
               <option>Rota Oeste</option>
             </select>
           </div>
-          <button class="botao" type="submit">Cadastrar Sensor</button>
+          <button class="botao_largo" type="submit">Cadastrar Sensor</button>
         </form>
       </details>
       
