@@ -177,3 +177,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//cadastro usuário
+function validar_usuario() {
+
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let senha = document.getElementById("senha").value;
+
+    if (nome == "" || email == "" || senha == "") {
+        alert("Preencha todos os campos.");
+        return false;
+    }
+
+    if (nome.length < 3) {
+        alert("O nome deve ter pelo menos 3 caracteres.");
+        return false;
+    }
+
+    if (!email.includes("@")) {
+        alert("Digite um email válido.");
+        return false;
+    }
+
+    return true;
+}
+
