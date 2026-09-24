@@ -7,7 +7,7 @@ create table usuarios (
     email VARCHAR(100) UNIQUE NOT NULL,
     telefone VARCHAR(15),
     numero_de_usuarios INT NOT NULL,
-    tipo_usuario ENUM('admin', 'usuario') NOT NULL,
+    tipo ENUM('administrador', 'funcionário') NOT NULL,
     senha VARCHAR(100) NOT NULL
 );
 

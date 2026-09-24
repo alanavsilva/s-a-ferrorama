@@ -3,23 +3,27 @@
 include "../../infra/conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
-    $tipo = $_POST["tipo"];
+    $nome = $_POST['nome'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $senha = $_POST['senha'] ?? '';
+    $tipo = $_POST['tipo'] ?? '';
+
+      if ($tipo === 'Administrador') {
+        $tipo = 'admin';
+    } else {
+        $tipo = 'usuario';
+    }
 
       if (empty($nome) || empty($email) || empty($senha) || empty($tipo)) {
         echo "Preencha todos os campos.";
     } else {
 
-        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-
         $sql = "INSERT INTO usuarios (nome, email, senha, tipo)
                 VALUES (?, ?, ?, ?)";
 
-        $stmt = $conexao->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
-        $stmt->bind_param("ssss", $nome, $email, $senhaHash, $tipo);
+        $stmt->bind_param("ssss", $nome, $email, $tipo);
 
         if ($stmt->execute()) {
             echo "Usuário cadastrado com sucesso!";
@@ -30,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    
 </head>
-   <body>
     
    <body class="body_geral">
    <div class="pagina">
@@ -95,13 +97,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </a>
     </aside>
 
-      <a href="#" class="logout-user">Logout</a>
-    </aside>
-
     <main class="content-user">
       <p class="painel-user">PAINEL ADMINISTRATIVO</p>
       <h1>Controle de usuários cadastrados</h1>
-      <h2>Funcionários e clientes</h2>
+      <h2>Admiistradores e Funcionários</h2>
 
 
       <button class="btn-cadastrar-user">CADASTRAR NOVO USUÁRIO</button>
@@ -118,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <p class="painel-user">PAINEL ADMINISTRATIVO</p>
   <h1>Controle de usuários cadastrados</h1>
-  <h2>Funcionários e Clientes</h2>
+  <h2>Admiistradores e Funcionários</h2>
 
   <form class="form-cadastro-user" method="POST">
     <div class="campo-user">
@@ -141,92 +140,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <label for="tipo">Tipo de usuário</label>
       <select id="tipo" name="tipo">
         <option>Funcionário</option>
-        <option>Cliente</option>
         <option>Administrador</option>
       </select>
     </div>
 
+    
+    <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
   </form>
-
-  <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
 </section>
 
       <section class="buscar-box-user">
       <label for="buscar">Buscar</label>
       <input type="text" id="buscar" class="form-control-user" placeholder="Nome ou email">
       </section>
-      <table class="table tabela-usuarios">
-    <thead>
-      <tr>
-
-        <th scope="col">Usuário</th>
-        <th scope="col">Email</th>
-        <th scope="col">Tipo usuário</th>
-        <th scope="col">Ação</th>
-
-    </tr>
-    </thead>
-
-    <tbody>
-
-      <tr>
-        <td>nicole.beloni</td>
-        <td>nicole_b_silva@gmail.com</td>
-        <td>Cliente</td>
-        <td>
-          <button class="btn-lixeira-user"></button>
-        </td>
-      </tr>
-
-    <tr>
-      <td>alana.veiga</td>
-      <td>alana_v_silva@gmail.com</td>
-      <td>Administrador</td>
-      <td>
-          <button class="btn-lixeira-user"></button>
-        </td>
-      </tr>
-  
-
-    <tr>
-      <td>piettra.cidral</td>
-      <td>piettra_cidral@gmail.com</td>
-      <td>Cliente</td>
-      <td>
-          <button class="btn-lixeira-user"></button>
-        </td>
-      </tr>
-
-      <tr>
-      <td>maria.fernanda</td>
-      <td>maria.fernanda@gmail.com</td>
-      <td>Administrador</td>
-      <td>
-          <button class="btn-lixeira-user"></button>
-        </td>
-      </tr>
-
-      <tr>
-      <td>jose.andrade</td>
-      <td>jose.andrade@gmail.com</td>
-      <td>Administrador</td>
-      <td>
-          <button class="btn-lixeira-user"></button>
-        </td>
-      </tr>
- </tbody>
-      </table>
 
       </main>
     </div>
 
-    <footer class="text-center mt-5 pt-3">
-      <p class="text-white-50 small">
-        <i class="bi bi-shield-check me-1"></i>Sistema seguro
-      </p>
-    </footer>
-
     <script src="../../script/validacao.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ...></script>
   </body>
 </html>
