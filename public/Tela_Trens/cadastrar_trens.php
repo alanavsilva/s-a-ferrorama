@@ -78,14 +78,6 @@
         </div>
       </header>
 
-  <section id="visualizacao">
-       <details>
-
-        <summary class="botao">
-          CADASTRAR NOVO TREM
-        </summary>
-
-      
         <tbody id="tabela-sensores">
           
           <form class="formulario" method="POST">
@@ -93,7 +85,13 @@
               <label for="nome">Nome do trem</label>
               <input type="text" id="nome" placeholder="Nome do trem" required>
             </div>
-            
+
+            <form class="formulario" method="POST">
+            <div>
+              <label for="nome">Velocidade máxima</label>
+              <input type="text" id="nome" placeholder="Velocidade máxima" required>
+            </div>
+              
               
             <div>
               <label for="tipo">Tipo/categoria</label>
@@ -105,14 +103,6 @@
                 </select>
               </div>
               <div>
-
-              <label for="trem">Velocidade máxima</label>
-                <select id="trem" required>
-                </select>
-             </div>
-
-              
-              
               
               <div>
                 <label for="rota">Rota</label>
