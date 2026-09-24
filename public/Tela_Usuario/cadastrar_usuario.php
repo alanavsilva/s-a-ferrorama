@@ -24,6 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt = $conn->prepare($sql);
 
+        if (!$stmt) {
+        echo "Erro ao preparar o cadastro.";
+        } else {
+
         $stmt->bind_param("ssss", $nome, $email, $senha, $tipo);
 
         if ($stmt->execute()) {
