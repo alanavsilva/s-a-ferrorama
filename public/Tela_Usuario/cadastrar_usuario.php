@@ -1,6 +1,7 @@
 <?php
 
 include "../../infra/conexao.php";
+include "visualizacao_usuario.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'] ?? '';
@@ -53,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cadastro</title>
+    <title>Cadastro Usuário</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/style/style.css">
 
@@ -175,7 +176,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
   </form>
 
-  <?php include "visualizacao_cadastro.php"; ?>
+  <?php mostrar_usuarios($resultado); ?>
 
 </section>
 
