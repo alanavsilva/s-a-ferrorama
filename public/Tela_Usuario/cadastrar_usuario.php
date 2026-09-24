@@ -31,6 +31,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Não foi possível cadastrar o usuário.";
         }
     }
+    $busca = $_GET['buscar'] ?? '';
+
+    $sql = "SELECT id_usuario, nome, email, tipo_usuario FROM usuarios WHERE nome LIKE ? OR email LIKE ? ORDER BY nome";
+
+    $textoBusca = "%" . $busca . "%";
+
+    $stmtBusca = $conn->prepare($sql);
+
+    $stmtBusca->bind_param("ss", $textoBusca, $textoBusca);
+
+    $stmtBusca->execute();
+
+    $resultado = $stmtBusca->get_result();
 }
 
 ?>
@@ -114,6 +127,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <span>alana.veiga</span>
     </div>
   </div>
+
+  <section class="buscar-box-user">
+
+    <form method="GET">
+
+        <label for="buscar">
+            Buscar
+        </label>
+
+        <input type="text" id="buscar" name="buscar" placeholder="Nome ou email" value="<?= $busca ?>">
+
+        <button type="submit">
+            Buscar
+        </button>
+
+    </form>
+
+</section>
 
   <p class="painel-user">PAINEL ADMINISTRATIVO</p>
   <h1>Controle de usuários cadastrados</h1>
