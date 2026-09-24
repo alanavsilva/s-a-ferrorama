@@ -1,5 +1,5 @@
-!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+</html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,8 +78,6 @@
         </div>
       </header>
 
-        <tbody id="tabela-sensores">
-          
           <form class="formulario" method="POST">
             <div>
               <label for="nome">Nome do trem</label>
@@ -91,7 +89,6 @@
               <label for="nome">Velocidade máxima</label>
               <input type="text" id="nome" placeholder="Velocidade máxima" required>
             </div>
-              
               
             <div>
               <label for="tipo">Tipo/categoria</label>
