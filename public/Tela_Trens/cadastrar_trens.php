@@ -91,9 +91,10 @@
           <form class="formulario" method="POST">
             <div>
               <label for="nome">Nome do trem</label>
-              <input type="text" id="nome" placeholder="Nome do sensor" required>
+              <input type="text" id="nome" placeholder="Nome do trem" required>
             </div>
             
+              
             <div>
               <label for="tipo">Tipo/categoria</label>
               <select id="tipo" required>
@@ -103,16 +104,15 @@
                 <option>Status</option>
                 </select>
               </div>
-              
               <div>
-                <label for="trem">Trem vinculado</label>
+
+              <label for="trem">Velocidade máxima</label>
                 <select id="trem" required>
-                  <option>Trem</option>
-                  <option>Trem 01</option>
-                  <option>Trem 02</option>
-                  <option>Trem 03</option>
                 </select>
-              </div>
+             </div>
+
+              
+              
               
               <div>
                 <label for="rota">Rota</label>
