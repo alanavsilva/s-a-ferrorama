@@ -78,4 +78,79 @@
         </div>
       </header>
 
-  <
+  <section id="visualizacao">
+       <details>
+
+        <summary class="botao">
+          CADASTRAR NOVO TREM
+        </summary>
+
+      
+        <tbody id="tabela-sensores">
+          
+          <form class="formulario" method="POST">
+            <div>
+              <label for="nome">Nome do trem</label>
+              <input type="text" id="nome" placeholder="Nome do sensor" required>
+            </div>
+            
+            <div>
+              <label for="tipo">Tipo/categoria</label>
+              <select id="tipo" required>
+                <option>Selecione o tipo</option>
+                <option>Velocidade</option>
+                <option>Temperatura</option>
+                <option>Status</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="trem">Trem vinculado</label>
+                <select id="trem" required>
+                  <option>Trem</option>
+                  <option>Trem 01</option>
+                  <option>Trem 02</option>
+                  <option>Trem 03</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="rota">Rota</label>
+                <select id="rota" required>
+                  <option>Rota</option>
+                  <option>Rota Norte</option>
+              <option>Rota Sul</option>
+              <option>Rota Leste</option>
+              <option>Rota Oeste</option>
+            </select>
+          </div>
+          <button class="botao" type="submit">Cadastrar Novo Trem</button>
+        </form>
+      </details>
+      
+      <div class="buscar">
+        <label for="pesquisa">Buscar</label>
+        <input id="pesquisa" type="text" placeholder="Nome do trem">
+      </div>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>ID do Trem</th>
+            <th>Nome do trem</th>
+            <th>Trem vinculado</th>
+            <th>Rota vinculada</th>
+            <th>Dados Monitorados</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+    </tbody>
+  </table>
+</section>
+</main>
+
+ <script src="validacao.js"></script>
+ <link rel="stylesheet" href="../../assets/style/style.css">
+
+</body>
+</html>
