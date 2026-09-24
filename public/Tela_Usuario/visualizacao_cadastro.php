@@ -17,7 +17,7 @@ function mostrar_usuarios($resultado) {
 
     <tbody>
 
-<?php while ($usuario = $resultado->fetch_assoc()): ?>
+<?php while ($usuario = $resultado->fetch_assoc()) { ?>
 
             <tr>
                 <td><?= $usuario['nome'] ?></td>
@@ -34,11 +34,18 @@ function mostrar_usuarios($resultado) {
                 </td>
 
                 <td>
-                    <a href="excluir_usuario.php?id=<?= $usuario['id_usuario'] ?>"
+                    <a href="excluir_u.php?id=<?= $usuario['id_usuario'] ?>"
                        class="btn-excluir">
-                        🗑
+                        <img src="https://img.icons8.com/ios-filled/20/000000/trash.png"
+                       alt="Excluir">
                     </a>
                 </td>
             </tr>
 
             <?php } ?>
+
+             </tbody>
+
+</table>
+
+ <?php } ?>
