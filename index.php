@@ -16,7 +16,7 @@ $sql = "SELECT * FROM usuarios
         AND email = '$email'
         AND senha = '$senha'";
 
-$resultado = $conexao->query($sql);
+$resultado = $conn->query($sql);
 
 if ($resultado->num_rows > 0) {
 
@@ -27,8 +27,7 @@ if ($resultado->num_rows > 0) {
         $_SESSION['email'] = $usuario['email'];
         $_SESSION['tipo'] = $usuario['tipo'];
 
-        // NOVO: verifica o tipo de usuário
-        if ($usuario['tipo'] == 'admin') {
+        if ($usuario['tipo'] == 'administrador') {
 
             header("Location: home.php");
             exit;

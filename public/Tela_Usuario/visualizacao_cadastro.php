@@ -25,7 +25,7 @@ function mostrar_usuarios($resultado) {
 
                  <td>
                     <?php
-                    if ($usuario['tipo'] === 'admin') {
+                    if ($usuario['tipo'] === 'administrador') {
                         echo 'Administrador';
                     } else {
                         echo 'Funcionário';

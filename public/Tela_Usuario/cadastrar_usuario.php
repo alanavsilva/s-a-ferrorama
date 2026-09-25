@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-        $tipo = 'admin';
+        $tipo = 'administrador';
 
     } else {
 
