@@ -33,13 +33,20 @@ function mostrar_usuarios($resultado) {
                     ?>
                 </td>
 
-                <td>
+                <td class= "acao_user">
+                    <a href="editar_u.php?id=<?= $usuario['id_usuario'] ?>"
+                       class="icon_editar">
+                       <img src="https://img.icons8.com/ios-filled/18/ffffff/edit.png" 
+                       alt="Editar">
+                    </a>
+                
                     <a href="excluir_u.php?id=<?= $usuario['id_usuario'] ?>"
-                       class="btn-excluir">
-                        <img src="https://img.icons8.com/ios-filled/20/000000/trash.png"
+                       class="icon_excluir">
+                        <img src="https://img.icons8.com/ios-filled/18/ffffff/trash.png"
                        alt="Excluir">
                     </a>
                 </td>
+
             </tr>
 
             <?php } ?>

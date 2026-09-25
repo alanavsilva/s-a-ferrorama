@@ -151,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </section>
 
-  <form class="form-cadastro-user" method="POST" id= "validar_usuario">
+  <form class="form-cadastro-user" method="POST" onsubmit="return validar_usuario()">
     <div class="campo-user">
       <label for="nome">Nome de usuário</label>
       <input type="text" id="nome" name="nome" placeholder="Nome completo">

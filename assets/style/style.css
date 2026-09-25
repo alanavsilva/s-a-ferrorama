@@ -373,7 +373,30 @@ td {
   display: none;
 }
 
+.acao_user {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
 
+.icon_editar,
+.icon_excluir {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.icon_excluir {
+    background-color: #6D0404; /* cor exata do mockup */
+}
+
+.icon_editar {
+    background-color: #490404; /* mesmo tom do botão "CADASTRAR NOVO USUÁRIO", pra ficar na mesma paleta mas diferenciar do excluir */
+}
 
 
 * {
@@ -382,11 +405,6 @@ td {
   box-sizing: border-box;
 }
 
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-}
 
 .pagina-login {
   width: 100%;
