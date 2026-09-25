@@ -36,6 +36,8 @@ O cadastro de um usuário como Administrador será realizado por meio da tela de
 
 **Funcionário:** terá acesso somente às funcionalidades definidas para sua função, sem poder alterar seu próprio nível de acesso ou conceder privilégios administrativos a si mesmo.
 
+---
+
 ### Proteção do cadastro de Administradores
 
 O cadastro de novos Administradores deverá ser protegido para impedir que usuários sem autorização alterem os dados enviados pelo formulário e atribuam a si mesmos o perfil administrativo.

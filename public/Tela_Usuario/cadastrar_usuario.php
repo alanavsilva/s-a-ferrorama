@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include "../../infra/conexao.php";
 include "visualizacao_usuario.php";
 
@@ -10,8 +12,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipo = $_POST['tipo'] ?? '';
 
       if ($tipo === 'Administrador') {
+        if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== 'admin') {
+
+            echo "Você não tem permissão para cadastrar um Administrador.";
+            exit;
+        }
+
         $tipo = 'admin';
+
     } else {
+
         $tipo = 'funcionário';
     }
 

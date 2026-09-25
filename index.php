@@ -3,6 +3,8 @@
 
 include  "infra/conexao.php";
 
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $nome = $_POST["nome"];
@@ -18,14 +20,30 @@ $resultado = $conexao->query($sql);
 
 if ($resultado->num_rows > 0) {
 
-    header("Location: home.html");
-    exit;
+        $usuario = $resultado->fetch_assoc();
 
-} else {
+        $_SESSION['id_usuario'] = $usuario['id_usuario'];
+        $_SESSION['nome'] = $usuario['nome'];
+        $_SESSION['email'] = $usuario['email'];
+        $_SESSION['tipo'] = $usuario['tipo'];
 
-    echo "Nome, email ou senha incorretos.";
+        // NOVO: verifica o tipo de usuário
+        if ($usuario['tipo'] == 'admin') {
 
+            header("Location: home.php");
+            exit;
+
+        } else {
+
+            header("Location: home.php");
+            exit;
         }
+
+    } else {
+
+        echo "Nome, email ou senha incorretos.";
+
+    }
 }
 
 ?>
