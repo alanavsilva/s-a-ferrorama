@@ -33,3 +33,16 @@ $usuario =mysqli_fetch_assoc($resultado);
             <label for="nome">Nome:</label>
             <input type="text" name="nome" value="<?php echo $usuario["nome"]?>">
             <br>
+
+             <button type="submit">Atualizar</button>
+        </form>
+
+    </main>
+    <footer>
+
+    </footer>
+
+
+</body>
+
+</html>
