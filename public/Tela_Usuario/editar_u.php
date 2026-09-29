@@ -34,6 +34,10 @@ $usuario =mysqli_fetch_assoc($resultado);
             <input type="text" name="nome" value="<?php echo $usuario["nome"]?>">
             <br>
 
+             <label for="email">Email:</label>
+            <input type="email" name="email" value="<?php echo $usuario["email"]?>">
+            <br>
+
              <button type="submit">Atualizar</button>
         </form>
 
