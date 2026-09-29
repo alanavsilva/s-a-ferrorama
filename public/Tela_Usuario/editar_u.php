@@ -38,7 +38,7 @@ $usuario =mysqli_fetch_assoc($resultado);
             <input type="email" name="email" value="<?php echo $usuario["email"]?>">
             <br>
 
-             <label for="senha">Senha:</label>
+             <label for="senha">senha:</label>
             <input type="password" name="senha" value="<?php echo $usuario["senha"]?>">
             <br>
 
