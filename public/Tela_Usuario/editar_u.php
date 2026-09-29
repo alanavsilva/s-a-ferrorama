@@ -26,6 +26,10 @@ $usuario =mysqli_fetch_assoc($resultado);
         <h1>Editar Usuário</h1>
 </header>
 <main>
-    <Editando o usuário <?php echo $usuario["nome"]; ?> </h2>
-    <form action atualizar php method="post">
-    
+    <h2>Editando o usuário <?php echo $usuario["nome"]; ?> </h2>
+    <form action="atualizar_u.php" method="post">
+       <input type="hidden" name="id" value="<?php echo $usuario["id"]?>">
+
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" value="<?php echo $usuario["nome"]?>">
+            <br>
