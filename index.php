@@ -1,48 +1,49 @@
 
 <?php
-
-include  "infra/conexao.php";
-
-session_start();
+require_once "infra/conexao.php";
+require_once "infra/auth.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$nome = trim($_POST["nome"]?? '');
+$email = trim($_POST["email"] ?? '');
+$senha = trim ($_POST["senha"];??'')
 
-$nome = $_POST["nome"];
-$email = $_POST["email"];
-$senha = $_POST["senha"];
-
-$sql = "SELECT * FROM usuarios 
-        WHERE nome = '$nome'
-        AND email = '$email'
-        AND senha = '$senha'";
-
-$resultado = $conn->query($sql);
-
-if ($resultado->num_rows > 0) {
-
-        $usuario = $resultado->fetch_assoc();
-
-        $_SESSION['id_usuario'] = $usuario['id_usuario'];
-        $_SESSION['nome'] = $usuario['nome'];
-        $_SESSION['email'] = $usuario['email'];
-        $_SESSION['tipo'] = $usuario['tipo'];
-
-        if ($usuario['tipo'] == 'administrador') {
-
-            header("Location: home.php");
-            exit;
-
-        } else {
-
-            header("Location: home.php");
-            exit;
-        }
-
+if ($nome === '' || $email === '' || $senha === '') {
+        $erro = "Preencha todos os campos.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $erro = "Credenciais inválidas.";
     } else {
 
-        echo "Nome, email ou senha incorretos.";
-
+$sql = "SELECT id_usuario, nome, email, tipo, senha
+        FROM usuarios
+        WHERE nome= ? AND email = ?
+        LIMIT 1";
     }
+  $stmt = $conn->prepare($sql);
+
+if ($stmt) {
+
+           $stmt->bind_param("ss", $nome, $email);
+            $stmt->execute();
+            $resultado = $stmt->get_result();
+            $usuario = $resultado->fetch_assoc();
+
+            if ($usuario && password_verify($senha, $usuario['senha'])) {
+                session_regenerate_id(true);
+
+                $_SESSION['id_usuario'] = $usuario['id_usuario'];
+                $_SESSION['nome'] = $usuario['nome'];
+                $_SESSION['email'] = $usuario['email'];
+                $_SESSION['tipo'] = $usuario['tipo'];
+                $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+
+                header("Location: public/Tela_Home/home.php");
+                exit;
+       
+        }
+
+    } 
+    $erro = "Credenciais inválidas.";
 }
 
 ?>
@@ -92,7 +93,11 @@ if ($resultado->num_rows > 0) {
                         Senha
                         <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
                     </label>
-                    <br>
+                   
+                    <?php if (isset($erro)): ?>
+                    <p role="alert"><?= escapar($erro) ?></p>
+                <?php endif; ?>
+
                     <button id="botao-envio" type="submit">Entrar</button>
                     <div id="mensagem"></div>
 </form>                   
