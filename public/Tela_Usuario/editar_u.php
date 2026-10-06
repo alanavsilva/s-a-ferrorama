@@ -1,6 +1,6 @@
 <?php
 
-include "../infra/conexao.php";
+require_once "../../infra/conexao.php";
 require_once "../../infra/auth.php";
 
 exigir_administrador();

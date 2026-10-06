@@ -4,7 +4,6 @@ require_once "../../infra/conexao.php";
 require_once "../../infra/auth.php";
 require_once "visualizacao_cadastro.php";
 
-include "../../infra/conexao.php";
 exigir_administrador();
 
 $mensagem = '';

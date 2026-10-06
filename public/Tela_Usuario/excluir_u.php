@@ -4,6 +4,7 @@ include "../../infra/conexao.php";
 require_once "../../infra/auth.php";
 
 exigir_administrador();
+verificar_csrf();
 
 $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
 
@@ -18,6 +19,10 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 $usuario = $resultado->fetch_assoc();
 
+if (!$usuario) {
+    exit("usuário não encontrado.");
+}
+
 if ($usuario["tipo"] === "administrador") {
     exit("este usuário não pode ser excluído.");
 }
@@ -29,6 +34,7 @@ $stmt->bind_param("i", $id);
 
 if ($stmt->execute()) {
     header("Location: cadastrar_usuario.php");
+    exit;
 } else {
     echo "erro ao excluir usuário.";
 }
