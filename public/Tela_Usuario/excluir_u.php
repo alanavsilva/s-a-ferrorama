@@ -2,7 +2,7 @@
 
 include "../../infra/conexao.php";
 
-$id = $_GET["id"];
+$id = $_POST["id"];
 
 $sql = "DELETE FROM usuarios WHERE id_usuario = ?";
 
