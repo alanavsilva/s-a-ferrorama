@@ -40,9 +40,8 @@ function mostrar_usuarios($resultado) : void
                 </form>
             </td>
         </tr>
-<?php endwhile; ?>
+<?php } ?>
     </tbody>
 </table>
 <?php
-}
-}
+}?>

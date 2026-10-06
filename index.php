@@ -6,7 +6,7 @@ require_once "infra/auth.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $nome = trim($_POST["nome"]?? '');
 $email = trim($_POST["email"] ?? '');
-$senha = trim ($_POST["senha"];??'')
+$senha = trim ($_POST["senha"]??'');
 
 if ($nome === '' || $email === '' || $senha === '') {
         $erro = "Preencha todos os campos.";

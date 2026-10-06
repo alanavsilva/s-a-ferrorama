@@ -54,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     }
-}
     $busca = trim($_GET['buscar'] ?? '');
 $textoBusca = "%" . $busca . "%";
 

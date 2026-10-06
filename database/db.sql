@@ -22,3 +22,6 @@ create table trens (
     id_trem INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL
 );
+
+INSERT INTO usuarios (nome, email, tipo, senha)
+VALUES ('Alana', 'alana@example.com', 'administrador', '123456');
