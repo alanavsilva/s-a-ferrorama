@@ -1,65 +1,73 @@
 <?php
 
-session_start();
+require_once "../../infra/conexao.php";
+require_once "../../infra/auth.php";
+require_once "visualizacao_cadastro.php";
 
 include "../../infra/conexao.php";
+exigir_administrador();
+
+$mensagem = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'] ?? '';
-    $email = $_POST['email'] ?? '';
+  verificar_csrf();
+
+    $nome = trim ($_POST['nome'] ?? '');
+    $email = trim ($_POST['email'] ?? '');
     $senha = $_POST['senha'] ?? '';
-    $tipo = $_POST['tipo'] ?? '';
+    $tipoRecebido = $_POST['tipo'] ?? '';
 
-      if ($tipo === 'Administrador') {
-        if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== 'admin') {
+     if ($nome === '' || $email === '' || $senha === '') {
+        $mensagem = "Preencha todos os campos.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $mensagem = "Informe um email válido.";
+    } elseif (strlen($senha) < 8) {
+        $mensagem = "A senha deve ter pelo menos 8 caracteres.";
+    } elseif (!in_array($tipoRecebido, ['Funcionário', 'Administrador'], true)) {
+        $mensagem = "Tipo de usuário inválido.";
+    } elseif ($tipoRecebido === 'Administrador' && $_SESSION['tipo'] !== 'administrador') {
 
-            echo "Você não tem permissão para cadastrar um Administrador.";
-            exit;
-        }
-
-        $tipo = 'administrador';
-
+    http_response_code(403);
+    exit("Você não tem permissão para cadastrar um Administrador.");
     } else {
-
-        $tipo = 'funcionário';
-    }
-
-      if (empty($nome) || empty($email) || empty($senha) || empty($tipo)) {
-        echo "Preencha todos os campos.";
-    } else {
+    $tipo = ($tipoRecebido === 'Administrador') ? 'administrador' : 'funcionário';
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO usuarios (nome, email, senha, tipo)
                 VALUES (?, ?, ?, ?)";
-
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
-        echo "Erro ao preparar o cadastro.";
+            $mensagem = "Não foi possível concluir o cadastro.";
         } else {
+            $stmt->bind_param("ssss", $nome, $email, $senhaHash, $tipo);
 
-        $stmt->bind_param("ssss", $nome, $email, $senha, $tipo);
+            if ($stmt->execute()) {
+                $mensagem = "Usuário cadastrado com sucesso!";
+            } elseif ($conn->errno === 1062) {
+                $mensagem = "Este email já está cadastrado.";
+            } else {
+                $mensagem = "Não foi possível concluir o cadastro.";
+            }
 
-        if ($stmt->execute()) {
-            echo "Usuário cadastrado com sucesso!";
-        } else {
-            echo "Não foi possível cadastrar o usuário.";
+            $stmt->close();
         }
     }
     }
 }
-    $busca = $_GET['buscar'] ?? '';
+    $busca = trim($_GET['buscar'] ?? '');
+$textoBusca = "%" . $busca . "%";
 
-    $sql = "SELECT id_usuario, nome, email, tipo FROM usuarios WHERE nome LIKE ? OR email LIKE ? ORDER BY nome";
+$sql = "SELECT id_usuario, nome, email, tipo
+        FROM usuarios
+        WHERE nome LIKE ? OR email LIKE ?
+        ORDER BY nome";
 
-    $textoBusca = "%" . $busca . "%";
+$stmtBusca = $conn->prepare($sql);
+$stmtBusca->bind_param("ss", $textoBusca, $textoBusca);
+$stmtBusca->execute();
+$resultado = $stmtBusca->get_result();
 
-    $stmtBusca = $conn->prepare($sql);
-
-    $stmtBusca->bind_param("ss", $textoBusca, $textoBusca);
-
-    $stmtBusca->execute();
-
-    $resultado = $stmtBusca->get_result();
 
 ?>
 
@@ -162,6 +170,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </section>
 
   <form class="form-cadastro-user" method="POST" onsubmit="return validar_usuario()">
+    <input type="hidden" name="csrf_token" value="<?= escapar(token_csrf()) ?>">
     <div class="campo-user">
       <label for="nome">Nome de usuário</label>
       <input type="text" id="nome" name="nome" placeholder="Nome completo">
@@ -189,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <button class="btn-cadastrar-form">CADASTRAR NOVO USUÁRIO</button>
   </form>
-
+<?php if ($mensagem !== ""): ?><p role="alert"><?= escapar($mensagem) ?></p><?php endif; ?>
   <?php mostrar_usuarios($resultado); ?>
 
 </section>
