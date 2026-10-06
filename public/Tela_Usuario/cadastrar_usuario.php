@@ -3,7 +3,6 @@
 session_start();
 
 include "../../infra/conexao.php";
-include "visualizacao_usuario.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'] ?? '';
@@ -45,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Não foi possível cadastrar o usuário.";
         }
+    }
     }
 }
     $busca = $_GET['buscar'] ?? '';
