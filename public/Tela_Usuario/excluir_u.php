@@ -2,7 +2,11 @@
 
 include "../../infra/conexao.php";
 
-$id = $_POST["id"];
+$id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
+
+if (!$id || $id < 1) {
+    exit("usuário inválido.");
+}
 
 $sql = "DELETE FROM usuarios WHERE id_usuario = ?";
 
@@ -10,9 +14,9 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 
 if ($stmt->execute()) {
-    header("Location: cadastrar_usuario.php");
+    header("location: cadastrar_usuario.php");
 } else {
-    echo "Erro ao excluir usuário.";
+    echo "erro ao excluir usuário.";
 }
 
 ?>
