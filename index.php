@@ -3,12 +3,13 @@
 require_once "infra/conexao.php";
 require_once "infra/auth.php";
 
+$erro = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$nome = trim($_POST["nome"]?? '');
 $email = trim($_POST["email"] ?? '');
 $senha = trim ($_POST["senha"]??'');
 
-if ($nome === '' || $email === '' || $senha === '') {
+if ($email === '' || $senha === '') {
         $erro = "Preencha todos os campos.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $erro = "Credenciais inválidas.";
@@ -16,14 +17,14 @@ if ($nome === '' || $email === '' || $senha === '') {
 
 $sql = "SELECT id_usuario, nome, email, tipo, senha
         FROM usuarios
-        WHERE nome= ? AND email = ?
+        WHERE email = ? 
         LIMIT 1";
     }
   $stmt = $conn->prepare($sql);
 
 if ($stmt) {
 
-           $stmt->bind_param("ss", $nome, $email);
+           $stmt->bind_param("s", $email);
             $stmt->execute();
             $resultado = $stmt->get_result();
             $usuario = $resultado->fetch_assoc();
@@ -40,11 +41,14 @@ if ($stmt) {
                 header("Location: public/Tela_Home/home.php");
                 exit;
        
+        }   $stmt->close();
+
+        } else {
+
+            $erro = "Não foi possível realizar o login.";
         }
 
     } 
-    $erro = "Credenciais inválidas.";
-}
 
 ?>
 
@@ -64,7 +68,12 @@ if ($stmt) {
         <section class="login-vizualização" id="login">
             <div class="painel-introducao">
 
-                <p class="inicio_login">Sistema TREMTECH</p>
+            <img
+        class="icone-trem"
+        src="https://img.icons8.com/ios/100/ffffff/train.png"
+        alt="Ícone de trem"
+    >
+                <p class="inicio_login">SISTEMA TREMTECH</p>
                 <h1>Controle sua ferrovia com praticidade.</h1>
                 <p class="introducao_login">
                     Painel para acompanhar usuarios, trens, passagens e rotas disponiveis.
@@ -74,14 +83,8 @@ if ($stmt) {
 
             <div id="login-cadastro">
             <form class="login-painel" id="login-formulario" method="POST">
-                    <p class="introducao_formulario">Acesso funcionário/cliente</p>
+                    <p class="introducao_formulario">Acesso administrador/funcionario</p>
                     <h2>Entrar no sistema</h2>
-
-
-                     <label for="nome">
-                        Nome usuário
-                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome de usuário">
-                    </label>
 
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Digite seu email" required>
@@ -99,15 +102,11 @@ if ($stmt) {
                 <?php endif; ?>
 
                     <button id="botao-envio" type="submit">Entrar</button>
-                    <div id="mensagem"></div>
 </form>                   
 </div>
     </section>
 </main>
-    <footer>
-    </footer>
     <link rel="stylesheet" href="assets/style/style.css">
-    <script src="../script/validacao.js"></script>
 </body>
 </html>
 
