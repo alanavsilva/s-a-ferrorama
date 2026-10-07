@@ -1,4 +1,11 @@
 1
+<?php
+
+require_once "../../infra/auth.php";
+
+exigir_login();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

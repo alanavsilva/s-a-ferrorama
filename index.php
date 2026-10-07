@@ -7,7 +7,7 @@ $erro = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $email = trim($_POST["email"] ?? '');
-$senha = trim ($_POST["senha"]??'');
+$senha = ($_POST["senha"]??'');
 
 if ($email === '' || $senha === '') {
         $erro = "Preencha todos os campos.";
@@ -19,17 +19,23 @@ $sql = "SELECT id_usuario, nome, email, tipo, senha
         FROM usuarios
         WHERE email = ? 
         LIMIT 1";
-    }
+
   $stmt = $conn->prepare($sql);
 
-if ($stmt) {
+   if (!$stmt) {
+
+            $erro = "Erro ao consultar o banco de dados.";
+
+        } else {
 
            $stmt->bind_param("s", $email);
             $stmt->execute();
             $resultado = $stmt->get_result();
             $usuario = $resultado->fetch_assoc();
 
-            if ($usuario && password_verify($senha, $usuario['senha'])) {
+
+       if ($usuario && password_verify($senha, $usuario['senha'])) {
+
                 session_regenerate_id(true);
 
                 $_SESSION['id_usuario'] = $usuario['id_usuario'];
@@ -38,18 +44,20 @@ if ($stmt) {
                 $_SESSION['tipo'] = $usuario['tipo'];
                 $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 
+                $stmt->close();
+
                 header("Location: public/Tela_Home/home.php");
                 exit;
-       
-        }   $stmt->close();
 
-        } else {
+            } else {
 
-            $erro = "Não foi possível realizar o login.";
+                $erro = "Email ou senha incorretos.";
+            }
+
+            $stmt->close();
         }
-
-    } 
-
+    }
+}
 ?>
 
 
@@ -94,12 +102,14 @@ if ($stmt) {
 
                     <label for="senha">
                         Senha
-                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
                     </label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                    
-                    <?php if (isset($erro)): ?>
-                    <p role="alert"><?= escapar($erro) ?></p>
-                <?php endif; ?>
+                <p role="alert">
+                            <?= escapar($erro) ?>
+                        </p>
+
+                    <?php endif; ?>
 
                     <button id="botao-envio" type="submit">Entrar</button>
 </form>                   
