@@ -1052,6 +1052,209 @@ body {
 }
 
 
+.cabecalho-relatorio {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 
+    margin-bottom: 30px;
+}
+
+.titulo-relatorio {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-pequeno-relatorio {
+    color: #69070c;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-bottom: 2px;
+}
+
+.titulo-relatorio h1 {
+    color: #080808;
+    font-size: 28px;
+}
+
+
+
+
+.perfil-admin-relatorio {
+    width: 155px;
+    height: 67px;
+
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 14px;
+
+    gap: 12px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.perfil-circulo-relatorio {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background-color: #69070c;
+}
+
+.perfil-informacoes-relatorio {
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil-informacoes-relatorio strong {
+    font-size: 14px;
+    color: #111111;
+}
+
+.perfil-informacoes-relatorio span {
+    font-size: 13px;
+    color: #777777;
+    font-weight: bold;
+}
+
+
+
+
+.area-relatorio {
+    display: flex;
+
+    gap: 40px;
+
+    align-items: flex-start;
+}
+
+
+
+.card-gerar-relatorio {
+    width: 290px;
+    min-height: 307px;
+
+    background-color: white;
+
+    padding: 35px 20px;
+
+    box-shadow: 5px 7px 12px rgba(0, 0, 0, 0.20);
+}
+
+.card-gerar-relatorio h2 {
+    color: #69070c;
+
+    font-size: 23px;
+
+    margin-bottom: 18px;
+}
+
+
+
+.formulario-relatorio {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-relatorio {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 15px;
+}
+
+.campo-relatorio label {
+    color: #69070c;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 4px;
+}
+
+.campo-relatorio select {
+    width: 100%;
+    height: 35px;
+
+    border: 1px solid #cccccc;
+
+    background-color: white;
+
+    padding: 0 8px;
+
+    color: #999999;
+
+    font-size: 13px;
+
+    outline: none;
+}
+
+
+
+.botao-gerar-relatorio {
+    width: 100%;
+    height: 34px;
+
+    margin-top: 2px;
+
+    border: none;
+    border-radius: 20px;
+
+    background-color: #5c0509;
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.botao-gerar-relatorio:hover {
+    background-color: #79090f;
+}
+
+
+
+.resultado-relatorio {
+    flex: 1;
+
+    min-height: 517px;
+
+    background-color: white;
+
+    box-shadow: 5px 7px 12px rgba(0, 0, 0, 0.20);
+}
+
+
+
+@media (max-width: 900px) {
+
+    .menu-lateral {
+        width: 220px;
+    }
+
+    .conteudo-relatorio {
+        padding: 25px;
+    }
+
+    .area-relatorio {
+        flex-direction: column;
+    }
+
+    .card-gerar-relatorio {
+        width: 100%;
+    }
+
+    .resultado-relatorio {
+        width: 100%;
+    }
+}
 
 
