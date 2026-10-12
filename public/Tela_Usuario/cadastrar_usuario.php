@@ -62,9 +62,24 @@ $sql = "SELECT id_usuario, nome, email, tipo
         ORDER BY nome";
 
 $stmtBusca = $conn->prepare($sql);
-$stmtBusca->bind_param("ss", $textoBusca, $textoBusca);
-$stmtBusca->execute();
-$resultado = $stmtBusca->get_result();
+
+if ($stmtBusca) {
+    $stmtBusca->bind_param("ss", $textoBusca, $textoBusca);
+
+    if ($stmtBusca->execute()) {
+        $resultado = $stmtBusca->get_result();
+    } else {
+        error_log("Erro ao consultar usuários: " . $stmtBusca->error);
+        $resultado = false;
+        $mensagem = "Não foi possível carregar os usuários.";
+    }
+
+    $stmtBusca->close();
+} else {
+    error_log("Erro ao preparar consulta: " . $conn->error);
+    $resultado = false;
+    $mensagem = "Não foi possível carregar os usuários.";
+}
 
 
 ?>
