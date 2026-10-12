@@ -1,11 +1,8 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-session_start();
-session_start();
+require_once "../../infra/conexao.php";
+require_once "../../infra/auth.php";
+require_once "visualizacao_cadastro.php";
 
 $mensagem_relatorios = "";
 $sensor_relatorios = "";
@@ -49,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios - TREMTECH</title>
-    <link rel="stylesheet" href="relatorios.css">
+   <link rel="stylesheet" href="../../assets/style/style.css">
 </head>
 
 <body class="pagina-relatorios">
