@@ -1,12 +1,21 @@
-<?php 
 
-function mostrar_usuarios($resultado) : void
+<?php
+
+function mostrar_usuarios($resultado): void
 {
+    if ($resultado === false) {
+        echo "<p>Não foi possível carregar os usuários.</p>";
+        return;
+    }
+
+    if ($resultado->num_rows === 0) {
+        echo "<p>Nenhum usuário encontrado.</p>";
+        return;
+    }
 ?>
 
 <table class="tabela-usuarios">
-
-<thead>
+    <thead>
         <tr>
             <th>Usuário</th>
             <th>Email</th>
@@ -16,32 +25,43 @@ function mostrar_usuarios($resultado) : void
     </thead>
 
     <tbody>
+        <?php while ($usuario = $resultado->fetch_assoc()) { ?>
+            <tr>
+                <td><?= escapar($usuario['nome']) ?></td>
+                <td><?= escapar($usuario['email']) ?></td>
+                <td>
+                    <?= $usuario['tipo'] === 'administrador'
+                        ? 'Administrador'
+                        : 'Funcionário' ?>
+                </td>
+                <td class="acao_user">
+                    <a href="editar_u.php?id=<?= (int)$usuario['id_usuario'] ?>"
+                       class="icon_editar"
+                       aria-label="Editar usuário">
+                        <img src="https://img.icons8.com/ios-filled/18/ffffff/edit.png" alt="">
+                    </a>
 
-<?php while ($usuario = $resultado->fetch_assoc()) { ?>
+                    <form method="POST" action="excluir_u.php"
+                          style="display:inline;"
+                          onsubmit="return confirm('Deseja realmente excluir este usuário?');">
 
-<tr>
-            <td><?= escapar($usuario['nome']) ?></td>
-            <td><?= escapar($usuario['email']) ?></td>
-            <td>
-                <?= $usuario['tipo'] === 'administrador' ? 'Administrador' : 'Funcionário' ?>
-            </td>
-            <td class="acao_user">
-                <a href="editar_u.php?id=<?= (int)$usuario['id_usuario'] ?>" class="icon_editar">
-                    <img src="https://img.icons8.com/ios-filled/18/ffffff/edit.png" alt="Editar">
-                </a>
+                        <input type="hidden" name="csrf_token"
+                               value="<?= escapar(token_csrf()) ?>">
 
-                <form method="POST" action="excluir_u.php" style="display:inline;"
-                      onsubmit="return confirm('Deseja realmente excluir este usuário?');">
-                    <input type="hidden" name="csrf_token" value="<?= escapar(token_csrf()) ?>">
-                    <input type="hidden" name="id" value="<?= (int)$usuario['id_usuario'] ?>">
-                    <button type="submit" class="icon_excluir" aria-label="Excluir">
-                        <img src="https://img.icons8.com/ios-filled/18/ffffff/trash.png" alt="Excluir">
-                    </button>
-                </form>
-            </td>
-        </tr>
-<?php } ?>
+                        <input type="hidden" name="id"
+                               value="<?= (int)$usuario['id_usuario'] ?>">
+
+                        <button type="submit" class="icon_excluir"
+                                aria-label="Excluir usuário">
+                            <img src="https://img.icons8.com/ios-filled/18/ffffff/trash.png" alt="">
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        <?php } ?>
     </tbody>
 </table>
+
 <?php
-}?>
+}
+?>

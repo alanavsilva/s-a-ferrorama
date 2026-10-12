@@ -172,7 +172,7 @@ if ($stmtBusca) {
             Buscar
         </label>
 
-        <input type="text" id="buscar" name="buscar" placeholder="Nome ou email" value="<?= $busca ?>">
+        <input type="text" id="buscar" name="buscar" placeholder="Nome ou email" value="<?= escapar($busca) ?>">
 
         <button type="submit">
             Buscar
