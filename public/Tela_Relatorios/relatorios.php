@@ -1,201 +1,242 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+session_start();
+
+$mensagem_relatorios = "";
+$sensor_relatorios = "";
+$periodo_relatorios = "";
+$relatorio_gerado = false;
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $sensor_relatorios = $_POST["sensor_relatorios"] ?? "";
+    $periodo_relatorios = $_POST["periodo_relatorios"] ?? "";
+
+    $sensores_permitidos_relatorios = [
+        "leste",
+        "central",
+        "oeste"
+    ];
+
+    $periodos_permitidos_relatorios = [
+        "maio-2026",
+        "junho-2026",
+        "julho-2026",
+        "agosto-2026",
+        "setembro-2026",
+        "outubro-2026"
+    ];
+
+    if (
+        in_array($sensor_relatorios, $sensores_permitidos_relatorios, true) &&
+        in_array($periodo_relatorios, $periodos_permitidos_relatorios, true)
+    ) {
+        $relatorio_gerado = true;
+        $mensagem_relatorios = "Filtros selecionados com sucesso.";
+    } else {
+        $mensagem_relatorios = "Selecione um sensor e um período válidos.";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Relatórios - TremTech</title>
-
-    <link rel="stylesheet" href="../../assets/style/relatorios.css">
-
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Relatórios - TREMTECH</title>
+    <link rel="stylesheet" href="relatorios.css">
 </head>
 
-<body>
+<body class="pagina-relatorios">
 
-    <div class="pagina-relatorio">
+<div class="layout-relatorios">
 
-        <aside class="menu-lateral">
+    <aside class="menu-lateral-relatorios">
 
-            <div class="menu-logo">
-                <div class="menu-logo-icone">
-                    <i class="bi bi-train-front"></i>
-                </div>
+        <div class="marca-relatorios">
+            <h2>SISTEMA TREMTECH</h2>
+        </div>
 
-                <span>SISTEMA TREMTECH</span>
+        <div class="linha-menu-relatorios"></div>
+
+        <nav class="navegacao-relatorios">
+            <a href="../home/index.php" class="item-menu-relatorios">Home</a>
+            <a href="../usuarios/listar_usuarios.php" class="item-menu-relatorios">Usuários</a>
+            <a href="../sensores/listar_sensores.php" class="item-menu-relatorios">Sensores</a>
+            <a href="../monitoramento/monitoramento.php" class="item-menu-relatorios">Monitoramento</a>
+            <a href="relatorios.php" class="item-menu-relatorios ativo-relatorios">Relatórios</a>
+            <a href="../trem/trem.php" class="item-menu-relatorios">Trem</a>
+            <a href="../rotas/rotas.php" class="item-menu-relatorios">Rotas</a>
+        </nav>
+
+        <a href="../logout.php" class="sair-relatorios">Logout</a>
+
+    </aside>
+
+    <main class="conteudo-relatorios">
+
+        <header class="cabecalho-relatorios">
+            <div class="titulo-area-relatorios">
+                <p class="sobretitulo-relatorios">
+                    PAINEL DE MONITORAMENTO
+                </p>
+
+                <h1>Monitoramento em tempo real</h1>
             </div>
 
-            <div class="menu-linha"></div>
+            <div class="perfil-relatorios">
+                <div class="avatar-relatorios"></div>
 
-            <nav class="menu-navegacao">
+                <div class="dados-perfil-relatorios">
+                    <strong>Admin</strong>
+                    <span>alana.veiga</span>
+                </div>
+            </div>
+        </header>
 
-                <a href="#" class="menu-item">
-                    <i class="bi bi-house-door"></i>
-                    <span>Home</span>
-                </a>
+        <section class="area-relatorios">
 
-                <a href="#" class="menu-item">
-                    <i class="bi bi-person-fill"></i>
-                    <span>Usuários</span>
-                </a>
+            <form
+                class="formulario-relatorios"
+                action="relatorios.php"
+                method="POST"
+            >
 
-                <a href="#" class="menu-item">
-                    <i class="bi bi-cpu"></i>
-                    <span>Sensores</span>
-                </a>
+                <h2>Gerar relatório</h2>
 
-                <a href="#" class="menu-item">
-                    <i class="bi bi-eye"></i>
-                    <span>Monitoramento</span>
-                </a>
+                <div class="campo-relatorios">
+                    <label for="sensor-relatorios">Sensor</label>
 
-                <a href="#" class="menu-item menu-item-ativo">
-                    <i class="bi bi-file-earmark-bar-graph"></i>
-                    <span>Relatórios</span>
-                </a>
+                    <select
+                        name="sensor_relatorios"
+                        id="sensor-relatorios"
+                        required
+                    >
+                        <option value="">Selecione um sensor</option>
 
-                <a href="#" class="menu-item">
-                    <i class="bi bi-train-front"></i>
-                    <span>Trem</span>
-                </a>
+                        <option value="leste"
+                            <?= $sensor_relatorios === "leste" ? "selected" : "" ?>>
+                            Sensor leste
+                        </option>
 
-                <a href="#" class="menu-item">
-                    <i class="bi bi-map"></i>
-                    <span>Rota</span>
-                </a>
+                        <option value="central"
+                            <?= $sensor_relatorios === "central" ? "selected" : "" ?>>
+                            Sensor central
+                        </option>
 
-            </nav>
-
-            <a href="#" class="menu-logout">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Logout</span>
-            </a>
-
-        </aside>
-
-
-        
-        <main class="conteudo-relatorio">
-
-            
-            <header class="cabecalho-relatorio">
-
-                <div class="titulo-relatorio">
-
-                    <span class="titulo-pequeno-relatorio">
-                        PAINEL DE MONITORAMENTO
-                    </span>
-
-                    <h1>
-                        Monitoramento em tempo real
-                    </h1>
-
+                        <option value="oeste"
+                            <?= $sensor_relatorios === "oeste" ? "selected" : "" ?>>
+                            Sensor oeste
+                        </option>
+                    </select>
                 </div>
 
-                <div class="perfil-admin-relatorio">
+                <div class="campo-relatorios">
+                    <label for="periodo-relatorios">Período</label>
 
-                    <div class="perfil-circulo-relatorio"></div>
+                    <select
+                        name="periodo_relatorios"
+                        id="periodo-relatorios"
+                        required
+                    >
+                        <option value="">Selecione um período</option>
 
-                    <div class="perfil-informacoes-relatorio">
-                        <strong>Admin</strong>
-                        <span>alana.veiga</span>
+                        <option value="maio-2026"
+                            <?= $periodo_relatorios === "maio-2026" ? "selected" : "" ?>>
+                            Maio de 2026
+                        </option>
+
+                        <option value="junho-2026"
+                            <?= $periodo_relatorios === "junho-2026" ? "selected" : "" ?>>
+                            Junho de 2026
+                        </option>
+
+                        <option value="julho-2026"
+                            <?= $periodo_relatorios === "julho-2026" ? "selected" : "" ?>>
+                            Julho de 2026
+                        </option>
+
+                        <option value="agosto-2026"
+                            <?= $periodo_relatorios === "agosto-2026" ? "selected" : "" ?>>
+                            Agosto de 2026
+                        </option>
+
+                        <option value="setembro-2026"
+                            <?= $periodo_relatorios === "setembro-2026" ? "selected" : "" ?>>
+                            Setembro de 2026
+                        </option>
+
+                        <option value="outubro-2026"
+                            <?= $periodo_relatorios === "outubro-2026" ? "selected" : "" ?>>
+                            Outubro de 2026
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit" class="botao-relatorios">
+                    Gerar relatório
+                </button>
+
+                <?php if ($mensagem_relatorios !== ""): ?>
+                    <p class="mensagem-relatorios">
+                        <?= htmlspecialchars($mensagem_relatorios, ENT_QUOTES, "UTF-8") ?>
+                    </p>
+                <?php endif; ?>
+
+            </form>
+
+            <section class="resultado-relatorios">
+
+                <?php if ($relatorio_gerado): ?>
+
+                    <div class="estado-relatorios">
+                        <h2>Relatório solicitado</h2>
+
+                        <p>
+                            Sensor:
+                            <strong>
+                                <?= htmlspecialchars($sensor_relatorios, ENT_QUOTES, "UTF-8") ?>
+                            </strong>
+                        </p>
+
+                        <p>
+                            Período:
+                            <strong>
+                                <?= htmlspecialchars($periodo_relatorios, ENT_QUOTES, "UTF-8") ?>
+                            </strong>
+                        </p>
+
+                        <p>
+                            Os filtros foram recebidos.
+                            Os dados reais precisam ser consultados no banco de dados.
+                        </p>
                     </div>
 
-                </div>
+                <?php else: ?>
 
-            </header>
+                    <div class="estado-vazio-relatorios">
+                        <h2>Relatório</h2>
 
+                        <p>
+                            Selecione um sensor e um período
+                            para solicitar um relatório.
+                        </p>
+                    </div>
 
-            
-            <section class="area-relatorio">
-
-
-                <div class="card-gerar-relatorio">
-
-                    <h2>Gerar relatório</h2>
-
-                    <form class="formulario-relatorio">
-
-                        <div class="campo-relatorio">
-
-                            <label for="sensor-relatorio">
-                                Sensor
-                            </label>
-
-                            <select id="sensor-relatorio" name="sensor">
-
-                                <option value="">
-                                    Sensor leste
-                                </option>
-
-                                <option value="sensor-norte">
-                                    Sensor norte
-                                </option>
-
-                                <option value="sensor-sul">
-                                    Sensor sul
-                                </option>
-
-                                <option value="sensor-oeste">
-                                    Sensor oeste
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="campo-relatorio">
-
-                            <label for="periodo-relatorio">
-                                Período
-                            </label>
-
-                            <select id="periodo-relatorio" name="periodo">
-
-                                <option value="">
-                                    Maio de 2026
-                                </option>
-
-                                <option value="abril-2026">
-                                    Abril de 2026
-                                </option>
-
-                                <option value="maio-2026">
-                                    Maio de 2026
-                                </option>
-
-                                <option value="junho-2026">
-                                    Junho de 2026
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <button type="submit" class="botao-gerar-relatorio">
-                            Gerar relatório
-                        </button>
-
-                    </form>
-
-                </div>
-
-
-              
-                <div class="resultado-relatorio">
-
-                </div>
+                <?php endif; ?>
 
             </section>
 
-        </main>
+        </section>
 
-    </div>
+    </main>
+
+</div>
 
 </body>
-
 </html>
