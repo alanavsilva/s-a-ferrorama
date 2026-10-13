@@ -8,21 +8,9 @@ function cadastrarSensor() {
         trem: document.getElementById("trem").value,
         rota: document.getElementById("rota").value
     };
-    sensores.push(sensor); mostrarSensores();
+    sensores.push(sensor); 
+    mostrarSensores();
 }
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const btnAbrir = document.querySelector('.btn-cadastrar-user');
-    const formCadastro = document.querySelector('.cadastro-usuario');
-
-    if (btnAbrir && formCadastro) {
-        btnAbrir.addEventListener('click', () => {
-            formCadastro.classList.toggle('ativo');
-        });
-    }
-});
 
 //cadastro usuário
 function validar_usuario() {
