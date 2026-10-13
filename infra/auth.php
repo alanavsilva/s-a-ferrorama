@@ -22,7 +22,7 @@ function exigir_administrador(): void
 {
     exigir_login();
 
-    if ($_SESSION['tipo'] !== 'administrador') {
+    if (strcasecmp($_SESSION['tipo'], 'Administrador') !== 0) {       
         http_response_code(403);
         exit('Acesso negado.');
     }

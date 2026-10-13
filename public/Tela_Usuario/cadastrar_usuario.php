@@ -140,7 +140,7 @@ if ($stmtBusca) {
 </a>
 
 
-<a class="logout" href="../../index.php">
+<a class="logout" href="../../logout.php">
   <span class="icone" style="mask-image: url('https://img.icons8.com/ios-filled/18/000000/logout-rounded.png'); -webkit-mask-image: url('https://img.icons8.com/ios-filled/18/000000/logout-rounded.png');"></span>
   Logout
 </a>

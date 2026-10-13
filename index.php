@@ -109,8 +109,6 @@ $sql = "SELECT id_usuario, nome, email, tipo, senha
                             <?= escapar($erro) ?>
                         </p>
 
-                    <?php endif; ?>
-
                     <button id="botao-envio" type="submit">Entrar</button>
 </form>                   
 </div>
