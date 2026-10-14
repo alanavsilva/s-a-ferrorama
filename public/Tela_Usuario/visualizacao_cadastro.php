@@ -3,6 +3,9 @@
 
 function mostrar_usuarios($resultado): void
 {
+    $ehAdministrador =
+        strcasecmp($_SESSION['tipo'] ?? '', 'Administrador') === 0;
+
     if ($resultado === false) {
         echo "<p>Não foi possível carregar os usuários.</p>";
         return;
@@ -20,7 +23,10 @@ function mostrar_usuarios($resultado): void
             <th>Usuário</th>
             <th>Email</th>
             <th>Tipo usuário</th>
-            <th>Ação</th>
+
+            <?php if ($ehAdministrador) { ?>
+                <th>Ação</th>
+            <?php } ?>
         </tr>
     </thead>
 
@@ -30,33 +36,55 @@ function mostrar_usuarios($resultado): void
                 <td><?= escapar($usuario['nome']) ?></td>
                 <td><?= escapar($usuario['email']) ?></td>
                 <td>
-                    <?= $usuario['tipo'] === 'administrador'
+                    <?= strcasecmp($usuario['tipo'], 'Administrador') === 0
                         ? 'Administrador'
                         : 'Funcionário' ?>
                 </td>
-                <td class="acao_user">
-                    <a href="editar_u.php?id=<?= (int)$usuario['id_usuario'] ?>"
-                       class="icon_editar"
-                       aria-label="Editar usuário">
-                        <img src="https://img.icons8.com/ios-filled/18/ffffff/edit.png" alt="">
-                    </a>
 
-                    <form method="POST" action="excluir_u.php"
-                          style="display:inline;"
-                          onsubmit="return confirm('Deseja realmente excluir este usuário?');">
+                <?php if ($ehAdministrador) { ?>
+                    <td class="acao_user">
+                        <a
+                            href="editar_u.php?id=<?= (int)$usuario['id_usuario'] ?>"
+                            class="icon_editar"
+                            aria-label="Editar usuário"
+                        >
+                            <img
+                                src="https://img.icons8.com/ios-filled/18/ffffff/edit.png"
+                                alt=""
+                            >
+                        </a>
 
-                        <input type="hidden" name="csrf_token"
-                               value="<?= escapar(token_csrf()) ?>">
+                        <form
+                            method="POST"
+                            action="excluir_u.php"
+                            style="display:inline;"
+                            onsubmit="return confirm('Deseja realmente excluir este usuário?');"
+                        >
+                            <input
+                                type="hidden"
+                                name="csrf_token"
+                                value="<?= escapar(token_csrf()) ?>"
+                            >
 
-                        <input type="hidden" name="id"
-                               value="<?= (int)$usuario['id_usuario'] ?>">
+                            <input
+                                type="hidden"
+                                name="id"
+                                value="<?= (int)$usuario['id_usuario'] ?>"
+                            >
 
-                        <button type="submit" class="icon_excluir"
-                                aria-label="Excluir usuário">
-                            <img src="https://img.icons8.com/ios-filled/18/ffffff/trash.png" alt="">
-                        </button>
-                    </form>
-                </td>
+                            <button
+                                type="submit"
+                                class="icon_excluir"
+                                aria-label="Excluir usuário"
+                            >
+                                <img
+                                    src="https://img.icons8.com/ios-filled/18/ffffff/trash.png"
+                                    alt=""
+                                >
+                            </button>
+                        </form>
+                    </td>
+                <?php } ?>
             </tr>
         <?php } ?>
     </tbody>
